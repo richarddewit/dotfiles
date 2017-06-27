@@ -1,0 +1,39 @@
+[global]
+    font = "Terminess Powerline, FontAwesome 10"
+    allow_markup = yes
+    format = "<b>%a: %s</b>\n%b\n%p"
+    sort = yes
+    indicate_hidden = true
+    idle_threshold = 0
+    geometry = "0-15-30"
+    alignment = right
+    show_age_threshold = 60
+    sticky_history = yes
+    word_wrap = yes
+    separator_height = 2
+    padding = 20
+    horizontal_padding = 50
+    separator_color = auto
+    transparency = 10
+    startup_notification = true
+
+
+[shortcuts]
+    close = mod4+x
+    close_all = mod4+shift+x
+    history = mod4+grave
+
+[urgency_low]
+    background = "#969896"
+    foreground = "#c5c8c6"
+    timeout = 10
+
+[urgency_normal]
+    background = "#81a2be"
+    foreground = "#c5c8c6"
+    timeout = 10
+
+[urgency_critical]
+    background = "#cc6666"
+    foreground = "#c5c8c6"
+    timeout = 0
