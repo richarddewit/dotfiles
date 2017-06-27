@@ -11,18 +11,40 @@ printf "${LINE}" "${BLUE}|_|  \\___|\\__,_|\\___/|_|  \\__,_| ${NC}" "(_)__,_|\\
  
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
+mkdir $HOME/tmp
+mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
+
 
 ## Core
-sudo dnf install -y vim git the_silver_searcher
+sudo dnf install -y vim git the_silver_searcher gksu polkit-gnome
 
+ln -sf $DIR/.Xresources $HOME/.Xresources
 
 ## i3wm
 sudo dnf copr enable -y mkrawiec/i3desktop
-sudo dnf install -y i3-gaps compton dmenu rofi dex-xdg
+sudo dnf install -y i3-gaps i3status i3blocks compton dmenu rofi dex-xdg dunst nitrogen arandr
+
+ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
+ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
+sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
+sudo chmod +x /usr/local/bin/fix_xcursor
+
+### xtitle
+sudo dnf install libxcb-devel xcb-util-wm-devel xcb-util-keysyms-devel xcb-util-devel
+git clone https://github.com/baskerville/xtitle.git $HOME/tmp/xtitle
+cd $HOME/tmp/xtitle
+make && sudo make install
+cd $DIR
+
+### xcape
+sudo dnf install gcc make pkgconfig libX11-devel libXtst-devel libXi-devel
+git clone https://github.com/alols/xcape.git $HOME/tmp/xcape
+cd $HOME/tmp/xcape
+make && sudo make install
+cd $DIR
 
 
 ## Terminal
-mkdir $HOME/tmp
 git clone https://github.com/powerline/fonts.git $HOME/tmp/powerline-fonts
 cd $HOME/tmp/powerline-fonts
 ./install.sh
@@ -33,7 +55,7 @@ ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
 
 ## THEMING
-sudo dnf install -y lxappearance numix-gtk-theme numix-icon-theme-circle dmz-cursor-themes
+sudo dnf install -y lxappearance numix-gtk-theme numix-icon-theme-circle dmz-cursor-themes fontawesome-fonts
 
 
 ## ZSH
