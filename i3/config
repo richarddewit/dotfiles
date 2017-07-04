@@ -263,8 +263,7 @@ set $c_brown   #a3685a
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-    status_command i3status
-    # status_command i3blocks
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position bottom
     tray_output primary
 

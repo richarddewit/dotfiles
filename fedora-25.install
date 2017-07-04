@@ -16,7 +16,7 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 
 
 ## Core
-sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome
+sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop
 
 ln -sf $DIR/.Xresources $HOME/.Xresources
 
@@ -26,6 +26,8 @@ sudo dnf install -y i3-gaps i3status i3blocks compton dmenu rofi dex-xdg dunst n
 
 ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
 ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
+ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
+ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
 sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
 sudo chmod +x /usr/local/bin/fix_xcursor
 
