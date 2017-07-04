@@ -239,37 +239,35 @@ exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xcape -e 'Caps_Lock=Escape'
 exec --no-startup-id aplay -q ~/Music/The-Microsoft-Sound.wav
 
-# Colors Base16 Tomorrow
-set $c_foreground #c5c8c6
+# Colors Base16 Tomorrow (made dark)
+set $c_foreground #d6d6d6
 set $c_background #1d1f21
 
-set $c_black_d   #1d1f21
-set $c_black_l   #969896
-set $c_white_d   #c5c8c6
-set $c_white_l   #ffffff
+set $c_black  #1d1f21
+set $c_gray_1 #282a2e
+set $c_gray_2 #4d4d4c
+set $c_gray_3 #969896
+set $c_gray_4 #8e908c
+set $c_gray_5 #d6d6d6
+set $c_gray_6 #e0e0e0
+set $c_white  #ffffff
 
-set $c_red_d     #cc6666
-set $c_red_l     #cc6666
-set $c_green_d   #b5bd68
-set $c_green_l   #b5bd68
-set $c_yellow_d  #f0c674
-set $c_yellow_l  #f0c674
-set $c_blue_d    #81a2be
-set $c_blue_l    #81a2be
-set $c_magenta_d #b294bb
-set $c_magenta_l #b294bb
-set $c_cyan_d    #8abeb7
-set $c_cyan_l    #8abeb7
+set $c_red     #c82829
+set $c_orange  #f5871f
+set $c_yellow  #eab700
+set $c_green   #718c00
+set $c_cyan    #3e999f
+set $c_blue    #4271ae
+set $c_magenta #8959a8
+set $c_brown   #a3685a
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
     status_command i3status
-    # status_command i3block
+    # status_command i3blocks
     position bottom
     tray_output primary
 
-    bindsym button4 nop
-    bindsym button5 nop
     font pango:Terminess Powerline, FontAwesome 8
     strip_workspace_numbers yes
     separator_symbol "■■"
@@ -279,11 +277,11 @@ bar {
 	statusline $c_foreground
 	separator  $c_background 
 
-	# Type             border         bg             text
-	focused_workspace  $c_green_l     $c_green_l     $c_background
-	active_workspace   $c_blue_l      $c_blue_l      $c_background
-	inactive_workspace $c_blue_l      $c_background  $c_black_l
-	urgent_workspace   $c_red_d       $c_red_d       $c_foreground
+	# Type             border       bg             text
+	focused_workspace  $c_green     $c_green       $c_background
+	active_workspace   $c_blue      $c_blue        $c_background
+	inactive_workspace $c_blue      $c_background  $c_gray_3
+	urgent_workspace   $c_red       $c_red         $c_foreground
     }
 }
 
@@ -292,9 +290,9 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # Type                  border        bg           text           indicator
-client.focused          $c_green_l    $c_green_l   $c_background  $c_blue_d
-client.unfocused        $c_black_l    $c_black_l   $c_foreground
-client.urgent           $c_red_d      $c_red_d     $c_background
+client.focused          $c_green      $c_green     $c_background  $c_blue
+client.unfocused        $c_black      $c_black     $c_foreground
+client.urgent           $c_red        $c_red       $c_background
 client.background       $c_background
 
 # Set inner/outer gaps
