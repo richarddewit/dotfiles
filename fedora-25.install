@@ -55,6 +55,7 @@ ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
 ## THEMING
 sudo dnf install -y lxappearance numix-gtk-theme numix-icon-theme-circle dmz-cursor-themes fontawesome-fonts
+ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
 
 
 ## ZSH
