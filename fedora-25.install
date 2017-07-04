@@ -16,13 +16,13 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 
 
 ## Core
-sudo dnf install -y vim git the_silver_searcher gksu polkit-gnome
+sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome
 
 ln -sf $DIR/.Xresources $HOME/.Xresources
 
 ## i3wm
 sudo dnf copr enable -y mkrawiec/i3desktop
-sudo dnf install -y i3-gaps i3status i3blocks compton dmenu rofi dex-xdg dunst nitrogen arandr
+sudo dnf install -y i3-gaps i3status i3blocks compton dmenu rofi dex-xdg dunst nitrogen arandr numlockx
 
 ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
 ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
@@ -50,7 +50,6 @@ cd $HOME/tmp/powerline-fonts
 ./install.sh
 cd $DIR
 
-mkdir -p $XDG_CONFIG_HOME/termite 
 ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
 
