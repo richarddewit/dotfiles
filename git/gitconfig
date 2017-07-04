@@ -1,0 +1,7 @@
+[core]
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Richard de Wit
+	email = henk.exe@gmail.com
+[push]
+	default = simple

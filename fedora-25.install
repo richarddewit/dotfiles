@@ -19,6 +19,8 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop
 
 ln -sf $DIR/.Xresources $HOME/.Xresources
+ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
+ln -sf $DIR/git/gitconfig $HOME/.gitconfig
 
 ## i3wm
 sudo dnf copr enable -y mkrawiec/i3desktop
