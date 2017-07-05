@@ -18,7 +18,7 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 ## Core
 sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop ranger w3m-img
 
-ln -sf $DIR/.Xresources $HOME/.Xresources
+ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
 ln -sf $DIR/git/gitconfig $HOME/.gitconfig
 
@@ -65,7 +65,7 @@ ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
 ## ZSH
 sudo dnf install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -sf $DIR/zsh/.zshrc $HOME/.zshrc
+ln -sf $DIR/zsh/zshrc $HOME/.zshrc
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
