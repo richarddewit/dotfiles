@@ -16,7 +16,7 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 
 
 ## Core
-sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop
+sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop ranger w3m-img
 
 ln -sf $DIR/.Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
