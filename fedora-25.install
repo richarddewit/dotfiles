@@ -12,7 +12,7 @@ printf "${LINE}" "${BLUE}|_|  \\___|\\__,_|\\___/|_|  \\__,_| ${NC}" "(_)__,_|\\
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 mkdir $HOME/tmp
-mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
+mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite,ranger}
 
 
 ## Core
