@@ -16,11 +16,15 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite}
 
 
 ## Core
-sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop ranger w3m-img
+sudo dnf install -y vim git the_silver_searcher beesu polkit-gnome sysstat htop pcmanfm ranger w3m-img google-chrome-stable
 
 ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
 ln -sf $DIR/git/gitconfig $HOME/.gitconfig
+ln -sf $DIR/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
+
+### Enable RPM Fusion free & non-free
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 ## i3wm
 sudo dnf copr enable -y mkrawiec/i3desktop
@@ -58,7 +62,7 @@ ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
 
 ## THEMING
-sudo dnf install -y lxappearance numix-gtk-theme numix-icon-theme-circle dmz-cursor-themes fontawesome-fonts
+sudo dnf install -y lxappearance numix-gtk-theme numix-icon-theme-circle dmz-cursor-themes fontawesome-fonts screenfetch
 ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
 
 
