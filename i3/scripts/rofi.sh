@@ -72,6 +72,7 @@ rofi \
   -show run \
   -p 'λ ' \
   -fullscreen \
+  -m -4 \ 
   -hide-scrollbar \
   -color-window "#$bg, #$fg, #$fg" \
   -color-normal "#$bg, #$fg, #$bg, #$fg, #$bg" \
