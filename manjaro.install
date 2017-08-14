@@ -8,8 +8,8 @@ printf "${LINE}" "${GREEN}|  \\/  | __ _ _ __  (_) __ _ _ __ ___    ${NC}"     "
 printf "${LINE}" "${GREEN}| |\\/| |/ _\` | '_ \\ | |/ _\` | '__/ _ \\   ${NC}" "  / _\` |/ _ \\| __| |_| | |/ _ \\/ __|"
 printf "${LINE}" "${GREEN}| |  | | (_| | | | || | (_| | | | (_) |  ${NC}"      " | (_| | (_) | |_|  _| | |  __/\\__ \\"
 printf "${LINE}" "${GREEN}|_|  |_|\\__,_|_| |_|/ |\\__,_|_|  \\___/   ${NC}"   "(_)__,_|\\___/ \\__|_| |_|_|\\___||___/"
-printf "${LINE}" "${GREEN}                  |__/                   ${NC}"                                   
- 
+printf "${LINE}" "${GREEN}                  |__/                   ${NC}"
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 mkdir $HOME/tmp
@@ -37,7 +37,7 @@ sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
 sudo pacman -Sy --noconfirm termite
-yaourt -Sy --noconfirm powerline-fonts-git
+yaourt -Sy --noconfirm powerline-fonts-git ttf-fira-code
 
 ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
