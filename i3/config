@@ -241,6 +241,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.screenlayout/screenlayout.sh && nitrogen --restore; sleep 1; compton -b --config ~/.config/compton/compton.conf
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id xset r rate 200 50
+exec --no-startup-id xset dpms 0 0 900
+exec --no-startup-id pcmanfm -d
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/pamac-tray
+exec --no-startup-id /opt/dropbox/dropbox
+exec --no-startup-id /usr/bin/davmail
+exec --no-startup-id xautolock -time 15 -locker blurlock
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xcape -e 'Caps_Lock=Escape'
 exec --no-startup-id aplay -q ~/Music/The-Microsoft-Sound.wav
