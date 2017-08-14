@@ -72,14 +72,14 @@ rofi \
   -show run \
   -p 'λ ' \
   -fullscreen \
-  -m -4 \ 
+  -m -4 \
   -hide-scrollbar \
   -color-window "#$bg, #$fg, #$fg" \
   -color-normal "#$bg, #$fg, #$bg, #$fg, #$bg" \
   -location 0 \
   -lines 8 \
   -bw 5 \
-  -font "Terminess Powerline bold 24" \
+  -font "Terminus (TTF) bold 24" \
   -padding 300 \
   -separator-style dash \
   -opacity 85
