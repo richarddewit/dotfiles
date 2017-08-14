@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:Fira Mono for Powerline, FontAwesome 10
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -63,7 +63,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
@@ -279,15 +279,15 @@ bar {
     separator_symbol "■■"
 
     colors {
-	background $c_background
-	statusline $c_foreground
-	separator  $c_background 
+        background $c_background
+        statusline $c_foreground
+        separator  $c_background
 
-	# Type             border       bg             text
-	focused_workspace  $c_green     $c_green       $c_background
-	active_workspace   $c_blue      $c_blue        $c_background
-	inactive_workspace $c_blue      $c_background  $c_gray_3
-	urgent_workspace   $c_red       $c_red         $c_foreground
+        # Type             border       bg             text
+        focused_workspace  $c_green     $c_green       $c_background
+        active_workspace   $c_blue      $c_blue        $c_background
+        inactive_workspace $c_blue      $c_background  $c_gray_3
+        urgent_workspace   $c_red       $c_red         $c_foreground
     }
 }
 
