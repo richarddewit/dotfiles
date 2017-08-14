@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+GREEN=$(tput setaf 2)
+NC=$(tput sgr0)
+LINE="%s%s\n"
+printf "${LINE}" "${GREEN} __  __              _                   ${NC}"      "      _       _    __ _ _           "
+printf "${LINE}" "${GREEN}|  \\/  | __ _ _ __  (_) __ _ _ __ ___    ${NC}"     "   __| | ___ | |_ / _(_) | ___  ___ "
+printf "${LINE}" "${GREEN}| |\\/| |/ _\` | '_ \\ | |/ _\` | '__/ _ \\   ${NC}" "  / _\` |/ _ \\| __| |_| | |/ _ \\/ __|"
+printf "${LINE}" "${GREEN}| |  | | (_| | | | || | (_| | | | (_) |  ${NC}"      " | (_| | (_) | |_|  _| | |  __/\\__ \\"
+printf "${LINE}" "${GREEN}|_|  |_|\\__,_|_| |_|/ |\\__,_|_|  \\___/   ${NC}"   "(_)__,_|\\___/ \\__|_| |_|_|\\___||___/"
+printf "${LINE}" "${GREEN}                  |__/                   ${NC}"                                   
+ 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
+mkdir $HOME/tmp
+mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite,ranger}
+
+
+## Core
+sudo pacman -Sy --noconfirm git the_silver_searcher sysstat
+yaourt -Sy --noconfirm chromium-widevine
+
+ln -sf $DIR/Xresources $HOME/.Xresources
+ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
+ln -sf $DIR/git/gitconfig $HOME/.gitconfig
+ln -sf $DIR/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
+
+## i3wm
+sudo pacman -Sy --noconfirm i3blocks rofi numlockx
+
+ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
+ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
+ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
+ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
+sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
+sudo chmod +x /usr/local/bin/fix_xcursor
+
+### xtitle
+### xcape
+sudo pacman -Sy --noconfirm xtitle xcape
+
+## Terminal
+sudo pacman -Sy --noconfirm termite
+yaourt -Sy --noconfirm powerline-fonts-git
+
+ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
+
+### Disable beep/bell
+sudo rmmod pcspkr
+echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+
+
+## THEMING
+sudo pacman -Sy --noconfirm numix-gtk-theme xcursor-vanilla-dmz
+yaourt -Sy --noconfirm numix-circle-arc-icons-git
+ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
+
+
+## ZSH
+sudo pacman -Sy --noconfirm zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+ln -sf $DIR/zsh/zshrc $HOME/.zshrc
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
