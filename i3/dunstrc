@@ -1,11 +1,11 @@
 [global]
-    font = "Terminess Powerline, FontAwesome 10"
+    font = "Fira Mono for Powerline, FontAwesome 12"
     allow_markup = yes
     format = "<b>%a: %s</b>\n%b\n%p"
     sort = yes
     indicate_hidden = true
     idle_threshold = 0
-    geometry = "0-15-30"
+    geometry = "0-20-40"
     alignment = right
     show_age_threshold = 60
     sticky_history = yes
