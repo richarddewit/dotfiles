@@ -245,26 +245,25 @@ exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xcape -e 'Caps_Lock=Escape'
 exec --no-startup-id aplay -q ~/Music/The-Microsoft-Sound.wav
 
-# Colors Base16 Tomorrow (made dark)
-set $c_foreground #d6d6d6
+# Colors Base16 Tomorrow Night
+set $c_foreground #c5c8c6
 set $c_background #1d1f21
 
-set $c_black  #1d1f21
-set $c_gray_1 #282a2e
-set $c_gray_2 #4d4d4c
-set $c_gray_3 #969896
-set $c_gray_4 #8e908c
-set $c_gray_5 #d6d6d6
-set $c_gray_6 #e0e0e0
-set $c_white  #ffffff
-
-set $c_red     #c82829
-set $c_orange  #f5871f
-set $c_yellow  #eab700
-set $c_green   #718c00
-set $c_cyan    #3e999f
-set $c_blue    #4271ae
-set $c_magenta #8959a8
+set $c_black   #1d1f21
+set $c_gray_1  #282a2e
+set $c_gray_2  #373b41
+set $c_gray_3  #969896
+set $c_gray_4  #b4b7b4
+set $c_gray_5  #c5c8c6
+set $c_gray_6  #e0e0e0
+set $c_white   #ffffff
+set $c_red     #cc6666
+set $c_orange  #de935f
+set $c_yellow  #f0c674
+set $c_green   #b5bd68
+set $c_cyan    #8abeb7
+set $c_blue    #81a2be
+set $c_magenta #b294bb
 set $c_brown   #a3685a
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
