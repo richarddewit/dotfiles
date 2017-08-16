@@ -139,11 +139,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
+# Move workspaces to other monitor
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+l move workspace to output right
+bindsym $mod+Control+Right move workspace to output right
+
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
 assign [class="(?i)Emacs"] → $ws1
 assign [class="(?i)Atom"] → $ws1
 assign [class="(?i)Google-chrome"] → $ws2
@@ -236,6 +238,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Autostart applications
 exec_always --no-startup-id numlockx on
+exec --no-startup-id pulseaudio
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.screenlayout/screenlayout.sh && nitrogen --restore; sleep 1; compton -b --config ~/.config/compton/compton.conf
