@@ -5,3 +5,6 @@
 *.swp
 
 .smbdelete*
+
+.c9/
+.idea/
