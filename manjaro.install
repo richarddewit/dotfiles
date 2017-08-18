@@ -37,7 +37,7 @@ sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
 sudo pacman -Sy --noconfirm termite
-yaourt -Sy --noconfirm powerline-fonts-git ttf-fira-code
+yaourt -Sy --noconfirm powerline-fonts-git ttf-fira-code ttf-symbola
 
 ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
