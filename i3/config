@@ -245,6 +245,7 @@ exec --no-startup-id ~/.screenlayout/screenlayout.sh && nitrogen --restore; slee
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id xset dpms 0 0 900
+exec --no-startup-id xinput set-prop 11 155 2.2, 0, 0, 0, 2.2, 0, 0, 0, 1
 exec --no-startup-id pcmanfm -d
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/pamac-tray
