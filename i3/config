@@ -282,6 +282,9 @@ bar {
     position bottom
     tray_output primary
 
+    bindsym button4 nop
+    bindsym button5 nop
+
     font pango:Fira Mono for Powerline, FontAwesome 8
 
     strip_workspace_numbers yes
@@ -299,6 +302,9 @@ bar {
         urgent_workspace   $c_red       $c_red         $c_foreground
     }
 }
+
+bindsym button4 nop
+bindsym button5 nop
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
