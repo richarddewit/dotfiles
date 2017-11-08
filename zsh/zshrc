@@ -61,6 +61,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Disable Ctrl-S (suspend) and Ctrl-Q (resume) in terminals
+stty -ixon
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
