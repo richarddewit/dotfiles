@@ -1,5 +1,4 @@
-function run_bg
-{
+function run_bg {
   nohup "$@" &>/dev/null & disown %%
 }
 
@@ -8,8 +7,7 @@ alias "$"=""
 alias sr="exec $SHELL"
 
 
-function mkcd
-{
+function mkcd {
   command mkdir -p $1 && cd $1
 }
 alias mkcd=mkcd
@@ -27,11 +25,6 @@ alias vup='vagrant up'
 # Emacs
 alias gmacs='run_bg emacs $@'
 
-# Python (virtualenv)
-alias wo='workon'
-alias workoff='deactivate'
-alias wf='workoff'
-
 # Listing with directory first
 alias l='ls -lah --group-directories-first'
 alias la='ls -lAh --group-directories-first'
@@ -46,3 +39,5 @@ function homestead() {
 alias hs=homestead
 alias hssus=homestead suspend
 alias hsssh=homestead ssh -- -t "cd projects/`basename "$PWD"`; /bin/bash"
+alias hsus=hssus
+alias hssh=hsssh
