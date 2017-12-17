@@ -58,6 +58,8 @@ ZSH_THEME="agnoster"
 plugins=(git npm archlinux gulp laravel5 composer zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+export DOTFILES=$HOME/dotfiles
+source $DOTFILES/zsh/aliases.zsh
 
 # User configuration
 
