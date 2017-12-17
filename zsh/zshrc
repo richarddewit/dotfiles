@@ -10,7 +10,19 @@ export ZSH=/home/richard/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
+
+# Theme settings, see https://github.com/caiogondim/bullet-train.zsh#options
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  status
+  context
+  dir
+  git
+)
+BULLETTRAIN_CONTEXT_DEFAULT_USER='richard'
+BULLETTRAIN_DIR_FG='black'
+BULLETTRAIN_NVM_FG='black'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -95,6 +107,11 @@ stty -ixon
 
 alias ssh='TERM=xterm ssh'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+
