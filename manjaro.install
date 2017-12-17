@@ -50,6 +50,7 @@ echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 sudo pacman -Sy --noconfirm numix-gtk-theme xcursor-vanilla-dmz
 yaourt -Sy --noconfirm numix-circle-arc-icons-git
 ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
+ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
 
 ## ZSH
