@@ -17,13 +17,14 @@
 #define base0D #81a2be
 #define base0E #b294bb
 #define base0F #a3685a
+#define background_opacity 90
 
 *.foreground:   base05
-#ifdef background_opacity
-*.background:   [background_opacity]base00
-#else
+!#ifdef background_opacity
+!*.background:   [background_opacity]base00
+!#else
 *.background:   base00
-#endif
+!#endif
 *.cursorColor:  base05
 
 *.color0:       base00
@@ -53,4 +54,35 @@
 *.color20:      base04
 *.color21:      base06
 
+! Xcursor --------------------------------------------------------------------
+Xcursor.theme: DMZ-White
 Xcursor.size: 32
+
+! Terminal settings ----------------------------------------------------------
+URxvt.depth: 32
+URxvt.geometry: 90x30
+URxvt.loginShell: true
+URxvt.internalBorder: 3
+URxvt.lineSpace: 0
+
+#ifdef background_opacity
+URxvt.background:   [background_opacity]base00
+#else
+URxvt.background:   base00
+#endif
+! URxvt*transparent: true
+! URxvt*shading: 10
+
+URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=10
+!URxvt*letterSpace: -1
+
+! scrollbar - true (default) or false
+URxvt*scrollBar: false
+
+! scrollbar position - left=false (default) or right=true
+URxvt*scrollBar_right: false
+URxvt*scrollBar_left: false
+
+! scrollbar style - rxvt (default), plain, next, or xterm
+URxvt*scrollstyle: plain
