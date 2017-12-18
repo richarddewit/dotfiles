@@ -237,7 +237,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Autostart applications
 exec_always --no-startup-id numlockx on
-exec --no-startup-id pulseaudio
+exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.screenlayout/screenlayout.sh && nitrogen --restore; sleep 1; compton -b --config ~/.config/compton/compton.conf
