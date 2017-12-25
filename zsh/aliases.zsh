@@ -6,6 +6,7 @@ function run_bg {
 alias "$"=""
 alias sr="exec $SHELL"
 
+alias vim=nvim
 
 function mkcd {
   command mkdir -p $1 && cd $1
@@ -37,7 +38,7 @@ function homestead() {
   ( cd ~/Homestead && vagrant $* )
 }
 alias hs=homestead
-alias hssus=homestead suspend
-alias hsssh=homestead ssh -- -t "cd projects/`basename "$PWD"`; /bin/bash"
+alias hssus="homestead suspend"
+alias hsssh="homestead ssh -- -t \"cd projects/`basename \"$PWD\"`; /bin/bash\""
 alias hsus=hssus
 alias hssh=hsssh
