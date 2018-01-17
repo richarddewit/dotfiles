@@ -20,12 +20,8 @@
 #define background_opacity 90
 
 *.foreground:   base05
-!#ifdef background_opacity
-!*.background:   [background_opacity]base00
-!#else
 *.background:   base00
-!#endif
-*.cursorColor:  base05
+*.cursorColor:  base06
 
 *.color0:       base00
 *.color1:       base08
@@ -58,31 +54,39 @@
 Xcursor.theme: DMZ-White
 Xcursor.size: 32
 
+! Font settings --------------------------------------------------------------
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.hintstyle: hintfull
+
 ! Terminal settings ----------------------------------------------------------
 URxvt.depth: 32
 URxvt.geometry: 90x30
 URxvt.loginShell: true
 URxvt.internalBorder: 3
 URxvt.lineSpace: 0
+URxvt.cursorBlink: true
+URxvt.saveLines: 65535
+URxvt.tripleclickwords: true
+! Dont set to true in i3wm, or the terminal windows go to space
+URxvt.borderLess: false
 
 #ifdef background_opacity
-URxvt.background:   [background_opacity]base00
-#else
-URxvt.background:   base00
+URxvt.background: [background_opacity]base00
 #endif
-! URxvt*transparent: true
-! URxvt*shading: 10
 
-URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
-URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=10
-!URxvt*letterSpace: -1
+URxvt*font: xft:Meslo LG S DZ for Powerline:size=8:antialias=true
+URxvt*boldFont: xft:Meslo LG S DZ for Powerline:style=Bold:size=8:antialias=true
+URxvt*italicFont: xft:Meslo LG S DZ for Powerline:style=Italic:size=8:antialias=true
 
-! scrollbar - true (default) or false
+! Disable scrollbar
 URxvt*scrollBar: false
-
-! scrollbar position - left=false (default) or right=true
 URxvt*scrollBar_right: false
 URxvt*scrollBar_left: false
 
-! scrollbar style - rxvt (default), plain, next, or xterm
-URxvt*scrollstyle: plain
+! Allow Ctrl+Left/Right to jump words
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C

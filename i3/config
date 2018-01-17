@@ -26,7 +26,8 @@ hide_edge_borders none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
+# bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -148,6 +149,7 @@ bindsym $mod+Control+Right move workspace to output right
 # Open applications on specific workspaces
 assign [class="(?i)Emacs"] → $ws1
 assign [class="(?i)Atom"] → $ws1
+assign [class="jetbrains-phpstorm"] → $ws1
 assign [class="(?i)Google-chrome"] → $ws2
 assign [class="(?i)Chromium"] → $ws2
 assign [class="(?i)Slack"] → $ws7
