@@ -228,15 +228,33 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Default applications
+set $browser chromium
+set $filemanager thunar
+set $mailclient thunderbird
+set $calculator gnome-calculator
+
 # Start Applications
-bindsym $mod+F2 exec chromium
-bindsym $mod+F3 exec thunar
-bindsym $mod+Shift+F3 exec gksu thunar
+bindsym $mod+F2 --release exec --no-startup-id $browser
+bindsym $mod+F3 --release exec --no-startup-id $filemanager
+bindsym $mod+Shift+F3 --release exec --no-startup-id gksu $filemanager
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+Scroll_Lock --release exec --no-startup-id gnome-calculator
+bindsym $mod+Scroll_Lock --release exec --no-startup-id $calculator
+
+# Media keys
+bindsym XF86Calculator --release exec --no-startup-id $calculator
+bindsym XF86Explorer --release exec --no-startup-id $filemanager
+bindsym Shift+XF86Explorer --release exec --no-startup-id gksu $filemanager
+# bindsym XF86Mail --release exec --no-startup-id $mailclient
+bindsym XF86HomePage --release exec --no-startup-id $browser
+
+# Volume controls (then update i3blocks displaying the volume)
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -SIGRTMIN+10 i3blocks
 
 # Autostart applications
 exec_always --no-startup-id numlockx on
