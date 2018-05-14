@@ -42,3 +42,4 @@ alias hssus="homestead suspend"
 alias hsssh="homestead ssh -- -t \"cd projects/`basename \"$PWD\"`; /bin/bash\""
 alias hsus=hssus
 alias hssh=hsssh
+alias hsedit="vim ~/Homestead/Homestead.yaml"

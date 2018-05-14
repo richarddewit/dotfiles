@@ -117,6 +117,7 @@ source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
 
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
