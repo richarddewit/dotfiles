@@ -45,7 +45,8 @@ export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
 export DOTFILES=$HOME/dotfiles
 
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/install-nvm-exec
 
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
