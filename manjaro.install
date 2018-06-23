@@ -18,8 +18,8 @@ mkdir -p $XDG_CONFIG_HOME/{nvim,compton,gtk-3.0,termite,ranger}
 
 
 ## Core
-sudo pacman -Sy --noconfirm git the_silver_searcher sysstat
-yaourt -Sy --noconfirm chromium-widevine
+sudo pacman -Sy --noconfirm yay git the_silver_searcher sysstat
+yay -Sy --noconfirm chromium-widevine
 
 ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
@@ -38,7 +38,7 @@ sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
 #sudo pacman -Sy --noconfirm termite
-yaourt -Sy --noconfirm powerline-fonts-git ttf-fira-code ttf-symbola
+yay -Sy --noconfirm powerline-fonts-git ttf-fira-code ttf-symbola
 
 #ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
 
@@ -49,7 +49,7 @@ echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 ## THEMING
 sudo pacman -Sy --noconfirm numix-gtk-theme xcursor-vanilla-dmz
-yaourt -Sy --noconfirm numix-circle-arc-icons-git
+yay -Sy --noconfirm numix-circle-arc-icons-git
 ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
 ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
