@@ -188,14 +188,18 @@ bindsym $mod+Shift+r restart
 
 # Set shut down, restart and locking features
 set $mode_system "System (L)ock, (E)xit, (S)uspend, (R)eboot, (Q)uit/shutdown"
-set $mode_system_lock "Lock: Y/N"
 set $mode_system_suspend "Suspend: Y/N"
 set $mode_system_logout "Logout: Y/N"
 set $mode_system_reboot "Reboot: Y/N"
 set $mode_system_shutdown "Shutdown: Y/N"
+set $suspend_yes_action exec --no-startup-id lock && systemctl suspend, mode "default"
+set $logout_yes_action exec --no-startup-id i3-msg exit, mode "default"
+set $reboot_yes_action exec --no-startup-id systemctl reboot, mode "default"
+set $shutdown_yes_action exec --no-startup-id systemctl poweroff, mode "default"
+set $no_action mode "default"
 
 mode $mode_system {
-    bindsym l mode $mode_system_lock
+    bindsym l exec --no-startup-id ~/dotfiles/i3/scripts/lock, mode "default"
     bindsym s mode $mode_system_suspend
     bindsym e mode $mode_system_logout
     bindsym r mode $mode_system_reboot
@@ -207,69 +211,45 @@ mode $mode_system {
 }
 bindsym $mod+BackSpace mode $mode_system
 
-mode $mode_system_lock {
-    set $lock_yes_action exec --no-startup-id ~/dotfiles/i3/scripts/lock, mode "default"
-    set $lock_no_action mode "default"
-
-    bindsym Y $lock_yes_action
-    bindsym y $lock_yes_action
-    bindsym Return $lock_yes_action
-
-    bindsym N $lock_no_action
-    bindsym n $lock_no_action
-    bindsym Escape $lock_no_action
-}
 
 mode $mode_system_suspend {
-    set $suspend_yes_action exec --no-startup-id lock && systemctl suspend, mode "default"
-    set $suspend_no_action mode "default"
-
     bindsym Y $suspend_yes_action
     bindsym y $suspend_yes_action
     bindsym Return $suspend_yes_action
 
-    bindsym N $suspend_no_action
-    bindsym n $suspend_no_action
-    bindsym Escape $suspend_no_action
+    bindsym N $no_action
+    bindsym n $no_action
+    bindsym Escape $no_action
 }
 
 mode $mode_system_logout {
-    set $logout_yes_action exec --no-startup-id i3-msg exit, mode "default"
-    set $logout_no_action mode "default"
-
     bindsym Y $logout_yes_action
     bindsym y $logout_yes_action
     bindsym Return $logout_yes_action
 
-    bindsym N $logout_no_action
-    bindsym n $logout_no_action
-    bindsym Escape $logout_no_action
+    bindsym N $no_action
+    bindsym n $no_action
+    bindsym Escape $no_action
 }
 
 mode $mode_system_reboot {
-    set $reboot_yes_action exec --no-startup-id systemctl reboot, mode "default"
-    set $reboot_no_action mode "default"
-
     bindsym Y $reboot_yes_action
     bindsym y $reboot_yes_action
     bindsym Return $reboot_yes_action
 
-    bindsym N $reboot_no_action
-    bindsym n $reboot_no_action
-    bindsym Escape $reboot_no_action
+    bindsym N $no_action
+    bindsym n $no_action
+    bindsym Escape $no_action
 }
 
 mode $mode_system_shutdown {
-    set $shutdown_yes_action exec --no-startup-id systemctl poweroff, mode "default"
-    set $shutdown_no_action mode "default"
-
     bindsym Y $shutdown_yes_action
     bindsym y $shutdown_yes_action
     bindsym Return $shutdown_yes_action
 
-    bindsym N $shutdown_no_action
-    bindsym n $shutdown_no_action
-    bindsym Escape $shutdown_no_action
+    bindsym N $no_action
+    bindsym n $no_action
+    bindsym Escape $no_action
 }
 
 # resize window (you can also use the mouse for that)
