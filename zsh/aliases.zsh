@@ -23,8 +23,9 @@ alias vsus='vagrant suspend'
 alias vssh='vagrant ssh'
 alias vup='vagrant up'
 
-# Emacs
+# Editors/IDEs
 alias gmacs='run_bg emacs $@'
+alias pstorm='run_bg phpstorm $@'
 
 # Listing with directory first
 alias l='ls -lah --group-directories-first'

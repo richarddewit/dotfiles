@@ -6,5 +6,12 @@
 
 .smbdelete*
 
-.c9/
 .idea/
+
+\#*\#
+.projectile
+
+.ac-php-conf.json
+_ide_helper.php
+.phpstorm.meta.php
+
