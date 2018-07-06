@@ -66,20 +66,14 @@ case $tod in
     ;;
 esac
 
-rofi \
-  -dmenu \
-  -i \
-  -show run \
-  -p 'λ ' \
-  -fullscreen \
-  -m -4 \
-  -hide-scrollbar \
-  -color-window "#$bg, #$fg, #$fg" \
-  -color-normal "#$bg, #$fg, #$bg, #$fg, #$bg" \
-  -location 0 \
-  -lines 8 \
-  -bw 5 \
-  -font "Terminus (TTF) bold 24" \
-  -padding 300 \
-  -separator-style dash \
-  -opacity 85
+monitor=-4
+color_window="#$bg, #$fg, #$fg"
+color_normal="#$bg, #$fg, #$bg, #$fg, #$bg"
+location=0
+lines=8
+border_width=5
+font="Terminus (TTF) bold 24"
+padding=300
+separator="dash"
+opacity=85
+
