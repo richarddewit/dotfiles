@@ -53,4 +53,8 @@ source /usr/share/nvm/install-nvm-exec
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# DB parameter mapping to be able to use php artisan commands on host
+export DB_HOST=127.0.0.1
+export DB_PORT=33060
+
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile
