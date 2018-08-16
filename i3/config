@@ -147,6 +147,21 @@ bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+l move workspace to output right
 bindsym $mod+Control+Right move workspace to output right
 
+# assign/for_window criteria which are currently implemented are:
+# (find props via xprop)
+#   instance    (the first part of WM_CLASS)
+#   class       (the second part of WM_CLASS)
+#   window_role (WM_WINDOW_ROLE)
+#   window_type (_NET_WM_WINDOW_TYPE)
+#     Possible values are normal, dialog, utility, toolbar, splash, menu,
+#     dropdown_menu, popup_menu, tooltip and notification.
+#   id          (X11 window ID)
+#   title       (X11 window title (_NET_WM_NAME or WM_NAME as fallback))
+#   urgent      (urgent state of the window)
+#     Can be "latest" or "oldest"
+#   workspace   (workspace name of the workspace the window belongs to)
+#   floating    (matches floating windows)
+#   tiling      (matches tiling windows)
 # Open applications on specific workspaces
 assign [class="(?i)Emacs"] → $ws1
 assign [class="(?i)Atom"] → $ws1
@@ -163,13 +178,13 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role=".*(?i)Preferences"] floating enable
+for_window [window_role="gnome-calculator"] floating enable border pixel 1
 
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
@@ -180,6 +195,9 @@ for_window [class="Simple-scan"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+
+for_window [instance="crx_.*"] floating disable
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
