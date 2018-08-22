@@ -302,6 +302,9 @@ set $filemanager thunar
 set $mailclient thunderbird
 set $calculator gnome-calculator
 
+set $kbd_querty  setxkbmap 'us(euro)' -option 'caps:ctrl_modifier' -print | xkbcomp - $DISPLAY && xcape -e 'Caps_Lock=Escape'
+set $kbd_colemak setxkbmap -I$HOME/dotfiles/xkb 'colemak_DvbgHm(colemak)' -option 'caps:ctrl_modifier' -print | xkbcomp -I$HOME/dotfiles/xkb - $DISPLAY && xcape -e 'Caps_Lock=Escape'
+
 # Start Applications
 bindsym $mod+F2 --release exec --no-startup-id $browser
 bindsym $mod+F3 --release exec --no-startup-id $filemanager
@@ -311,6 +314,9 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+Scroll_Lock --release exec --no-startup-id $calculator
+
+bindsym $mod+grave --release exec --no-startup-id $kbd_querty
+bindsym $mod+Shift+grave --release exec --no-startup-id $kbd_colemak
 
 # Media keys
 bindsym XF86Calculator --release exec --no-startup-id $calculator
@@ -342,8 +348,9 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id dropbox
 # exec --no-startup-id davmail
 exec --no-startup-id xautolock -time 15 -locker ~/dotfiles/i3/scripts/lock
-exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
-exec --no-startup-id xcape -e 'Caps_Lock=Escape'
+exec --no-startup-id $kbd_querty
+# exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
+# exec --no-startup-id xcape -e 'Caps_Lock=Escape'
 exec --no-startup-id aplay -q ~/Music/The-Microsoft-Sound.wav
 
 # Colors Base16 Tomorrow Night
