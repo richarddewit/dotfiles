@@ -48,7 +48,7 @@ xkb_symbols "colemak" {
     key <AD02> { [            w,            W,           aring,            Aring ] };           // W
     key <AD03> { [            f,            F,          atilde,           Atilde ] };           // E
     key <AD04> { [            p,            P,          oslash,         Ooblique ] };           // R
-    key <AD05> { [            g,            G,     dead_ogonek,       asciitilde ] };           // T
+    key <AD05> { [            b,            B,      dead_breve,       asciitilde ] };           // T
     key <AD06> { [            j,            J,         dstroke,          Dstroke ] };           // Y
     key <AD07> { [            l,            L,         lstroke,          Lstroke ] };           // U
     key <AD08> { [            u,            U,          uacute,           Uacute ] };           // I
@@ -62,8 +62,8 @@ xkb_symbols "colemak" {
     key <AC02> { [            r,            R,      dead_grave,       asciitilde ] };           // S
     key <AC03> { [            s,            S,          ssharp,       asciitilde ] };           // D
     key <AC04> { [            t,            T,      dead_acute, dead_doubleacute ] };           // F
-    key <AC05> { [            d,            D,  dead_diaeresis,       asciitilde ] };           // G
-    key <AC06> { [            h,            H,      dead_caron,       asciitilde ] };           // H
+    key <AC05> { [            g,            G,     dead_ogonek,       asciitilde ] };           // G
+    key <AC06> { [            m,            M,     dead_macron,       asciitilde ] };           // H
     key <AC07> { [            n,            N,          ntilde,           Ntilde ] };           // J
     key <AC08> { [            e,            E,          eacute,           Eacute ] };           // K
     key <AC09> { [            i,            I,          iacute,           Iacute ] };           // L
@@ -73,10 +73,10 @@ xkb_symbols "colemak" {
     key <AB01> { [            z,            Z,              ae,               AE ] };           // Z
     key <AB02> { [            x,            X, dead_circumflex,       asciitilde ] };           // X
     key <AB03> { [            c,            C,        ccedilla,         Ccedilla ] };           // C
-    key <AB04> { [            v,            V,              oe,               OE ] };           // V
-    key <AB05> { [            b,            B,      dead_breve,       asciitilde ] };           // B
+    key <AB04> { [            d,            D,  dead_diaeresis,       asciitilde ] };           // V
+    key <AB05> { [            v,            V,              oe,               OE ] };           // B
     key <AB06> { [            k,            K,  dead_abovering,       asciitilde ] };           // N
-    key <AB07> { [            m,            M,     dead_macron,       asciitilde ] };           // M
+    key <AB07> { [            h,            H,      dead_caron,       asciitilde ] };           // M
     key <AB08> { [        comma,         less,    dead_cedilla,       asciitilde ] };           // ,
     key <AB09> { [       period,      greater,   dead_abovedot,       asciitilde ] };           // .
     key <AB10> { [        slash,     question,    questiondown,       asciitilde ] };           // /
