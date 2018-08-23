@@ -1,7 +1,7 @@
 #!/bin/env bash
 
-if [ -f $HOME/Pictures/lock_screen_background.png ]; then
-  i3lock -nefti $HOME/Pictures/lock_screen_background.png
+if [ -f $HOME/dotfiles/wallpapers/lock_screen_background.png ]; then
+  i3lock -nefti $HOME/dotfiles/wallpapers/lock_screen_background.png
 else
   i3lock -nefc 002200
 fi
