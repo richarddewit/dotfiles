@@ -173,17 +173,20 @@ assign [class="(?i)Thunderbird"] → $ws8
 assign [class="(?i)Wine"] → $ws9
 assign [class="qemu-system-x86_64"] → $ws10
 
+# Force borders
+for_window [class=".*"] border pixel 2
+
 # Open specific applications in floating mode
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role=".*(?i)Preferences"] floating enable
-for_window [window_role="gnome-calculator"] floating enable border pixel 1
+for_window [window_role="gnome-calculator"] floating enable
 
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="alsamixer"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border normal
