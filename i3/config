@@ -340,11 +340,11 @@ exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.screenlayout/screenlayout.sh && nitrogen --restore; sleep 1; compton -b --config ~/.config/compton/compton.conf
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id xset r rate 200 50
+exec_always --no-startup-id xset r rate 200 50
 exec --no-startup-id xset dpms 0 0 900
 exec --no-startup-id xinput set-prop 11 155 2.2, 0, 0, 0, 2.2, 0, 0, 0, 1
 exec --no-startup-id thunar --daemon
-exec --no-startup-id xbanish
+exec_always --no-startup-id xbanish
 exec --no-startup-id udiskie
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
