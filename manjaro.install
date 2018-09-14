@@ -24,8 +24,8 @@ yay -Sy --noconfirm chromium-widevine
 ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
 ln -sf $DIR/git/gitconfig $HOME/.gitconfig
-ln -sf $DIR/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
-ln -sf $DIR/flameshot.ini $XDG_CONFIG_HOME/Dharkael/flameshot.ini
+ln -sf $DIR/config/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
+ln -sf $DIR/config/flameshot.ini $XDG_CONFIG_HOME/Dharkael/flameshot.ini
 
 ## i3wm
 sudo pacman -Sy --noconfirm i3blocks rofi numlockx xtitle xcape
@@ -41,7 +41,7 @@ sudo chmod +x /usr/local/bin/fix_xcursor
 #sudo pacman -Sy --noconfirm termite
 yay -Sy --noconfirm powerline-fonts-git ttf-fira-code ttf-symbola
 
-#ln -sf $DIR/termite.config $XDG_CONFIG_HOME/termite/config
+ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
 
 ### Disable beep/bell
 sudo rmmod pcspkr
