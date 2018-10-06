@@ -14,12 +14,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 mkdir $HOME/{tmp,zsh}
 #mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite,ranger}
-mkdir -p $XDG_CONFIG_HOME/{nvim,compton,gtk-3.0,termite,ranger}
+mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,ranger,Dharkael}
 
 
 ## Core
-sudo pacman -Sy --noconfirm yay git the_silver_searcher sysstat flameshot
-yay -Sy --noconfirm chromium-widevine
+sudo pacman -Sy --noconfirm --needed yay git the_silver_searcher sysstat flameshot udiskie thunar
+yay -Sy --noconfirm --needed chromium-widevine nvm {,python{,2}-}neovim dropbox
 
 ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
@@ -28,18 +28,18 @@ ln -sf $DIR/config/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
 ln -sf $DIR/config/flameshot.ini $XDG_CONFIG_HOME/Dharkael/flameshot.ini
 
 ## i3wm
-sudo pacman -Sy --noconfirm i3blocks rofi numlockx xtitle xcape
+sudo pacman -Sy --noconfirm --needed i3blocks rofi numlockx xtitle xcape
 
 #ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
 ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
 ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
 ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
-sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
-sudo chmod +x /usr/local/bin/fix_xcursor
+#sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
+#sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
 #sudo pacman -Sy --noconfirm termite
-yay -Sy --noconfirm powerline-fonts-git ttf-fira-code ttf-symbola
+yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola
 
 ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
 
@@ -49,14 +49,14 @@ echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 
 ## THEMING
-sudo pacman -Sy --noconfirm numix-gtk-theme xcursor-vanilla-dmz
-yay -Sy --noconfirm numix-circle-arc-icons-git
+sudo pacman -Sy --noconfirm --needed numix-gtk-theme
+yay -Sy --noconfirm --needed numix-circle-arc-icons-git
 ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
 ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
 
 ## Shell/ZSH
-sudo pacman -Sy --noconfirm zsh
+sudo pacman -Sy --noconfirm --needed zsh
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -sf $DIR/profile $HOME/.profile
 ln -sf $DIR/zsh/zprofile $HOME/.zprofile
@@ -70,3 +70,6 @@ curl -L git.io/antigen > $HOME/zsh/antigen.zsh
 
 ## Custom keyboard layout
 sudo ln -sf $DIR/xkb/symbols/colemak_DvbgHm /usr/share/X11/xkb/symbols/colemak_DvbgHm
+
+mkdir ~/.screenlayout
+touch ~/.screenlayout/screenlayout.sh
