@@ -19,7 +19,7 @@ mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,ranger,Dharkael}
 
 ## Core
 sudo pacman -Sy --noconfirm --needed yay git the_silver_searcher sysstat flameshot udiskie thunar
-yay -Sy --noconfirm --needed chromium-widevine nvm {,python{,2}-}neovim dropbox
+yay -Sy --noconfirm --needed chromium-widevine nvm {,python{,2}-}neovim dropbox xbanish
 
 ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
