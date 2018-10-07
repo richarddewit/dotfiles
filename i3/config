@@ -346,6 +346,8 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xset r rate 200 50
 exec --no-startup-id xset dpms 0 0 900
 exec --no-startup-id xinput set-prop 11 155 2.2, 0, 0, 0, 2.2, 0, 0, 0, 1
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id is_laptop && xfce4-power-manager
 exec --no-startup-id thunar --daemon
 exec_always --no-startup-id xbanish
 exec --no-startup-id udiskie
