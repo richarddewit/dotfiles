@@ -38,7 +38,7 @@ ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
 #sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
-#sudo pacman -Sy --noconfirm termite
+#sudo pacman -Sy --noconfirm --needed termite
 yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola terminus-font-ttf
 
 ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
@@ -52,6 +52,7 @@ echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 sudo pacman -Sy --noconfirm --needed numix-gtk-theme
 yay -Sy --noconfirm --needed numix-circle-arc-icons-git
 ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
+ln -sf $DIR/gtk/gtk3-settings.ini $XDG_CONFIG_HOME/gtk-3.0/settings.ini
 ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
 
