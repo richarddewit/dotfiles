@@ -1,9 +1,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-[user]
-	name = Richard de Wit
-	email = henk.exe@gmail.com
+[include]
+	path = ~/.gitconfig.local
 [push]
 	default = simple
 [merge]
