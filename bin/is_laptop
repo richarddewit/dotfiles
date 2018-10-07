@@ -1,0 +1,13 @@
+# Checks whether system is a laptop.
+#
+# @exits {bool}   true if system is a laptop.
+for d in /sys/class/power_supply /proc/acpi/battery; do
+	[[ -d "$d" ]] && find $d -mindepth 1 -maxdepth 1 -name 'BAT*' -print0 -quit 2>/dev/null | grep -q . && exit 0
+done
+
+# note we're checking /sys/class/power_supply/battery/status for WSL
+for d in /sys/class/power_supply/battery/status /sys/module/battery/initstate; do
+	[[ -f "$d" ]] && exit 0
+done
+
+exit 1

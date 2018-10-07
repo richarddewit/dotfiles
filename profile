@@ -36,13 +36,14 @@ fi
 
 # alias ssh='TERM=xterm ssh'
 
+export DOTFILES=$HOME/dotfiles
 
 # $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Composer
 export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
-
-export DOTFILES=$HOME/dotfiles
+# Dotfiles bin
+export PATH=$DOTFILES/bin:$PATH
 
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/nvm.sh
