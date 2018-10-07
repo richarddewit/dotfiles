@@ -33,7 +33,6 @@ sudo pacman -Sy --noconfirm --needed i3blocks rofi numlockx xtitle xcape
 #ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
 ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
 ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
-ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
 #sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
 #sudo chmod +x /usr/local/bin/fix_xcursor
 

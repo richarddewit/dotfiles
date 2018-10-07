@@ -1,3 +1,45 @@
+#!/usr/bin/env bash
+
+icon_battery=""
+icon_batteries="    "
+icon_charging=""
+icon_clock=""
+icon_calendar=""
+icon_disk=""
+icon_home=""
+icon_linux=""
+icon_mail=""
+icon_cpu=""
+icon_mem=""
+icon_music=""
+icon_prog=""
+icon_shell=""
+icon_vol=""
+icon_mute=""
+icon_wlan=""
+icon_eth=""
+
+base00="#1d1f21"
+base01="#282a2e"
+base02="#373b41"
+base03="#969896"
+base04="#b4b7b4"
+base05="#c5c8c6"
+base06="#e0e0e0"
+base07="#ffffff"
+base08="#cc6666"
+base09="#de935f"
+base0A="#f0c674"
+base0B="#b5bd68"
+base0C="#8abeb7"
+base0D="#81a2be"
+base0E="#b294bb"
+base0F="#a3685a"
+
+separator="[separator]
+color=$base00"
+
+cat <<GLOBAL
 # i3blocks config file
 #
 # Please see man i3blocks for a complete reference!
@@ -20,49 +62,15 @@
 # signal
 # urgent
 
-# icon_battery="    "
-# icon_charging=""
-# icon_clock=""
-# icon_calendar=""
-# icon_disk=""
-# icon_home=""
-# icon_linux=""
-# icon_mail=""
-# icon_cpu=""
-# icon_mem=""
-# icon_music=""
-# icon_prog=""
-# icon_shell=""
-# icon_vol=""
-# icon_mute=""
-# icon_wlan=""
-# icon_eth=""
-
-# base00 #1d1f21
-# base01 #282a2e
-# base02 #373b41
-# base03 #969896
-# base04 #b4b7b4
-# base05 #c5c8c6
-# base06 #e0e0e0
-# base07 #ffffff
-# base08 #cc6666
-# base09 #de935f
-# base0A #f0c674
-# base0B #b5bd68
-# base0C #8abeb7
-# base0D #81a2be
-# base0E #b294bb
-# base0F #a3685a
 
 
 # Global properties
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=~/dotfiles/i3/scripts/i3blocks/$BLOCK_NAME
+command=~/dotfiles/i3/scripts/i3blocks/\$BLOCK_NAME
 full_text=■
-color=#c5c8c6
+color=$base05
 markup=none
 separator=false
 separator_block_width=5
@@ -71,26 +79,27 @@ separator_block_width=5
 [title]
 command=xtitle -st 65
 interval=persist
-color=#8abeb7
+color=$base0C
 
 
-[separator]
-color=#1d1f21
-[separator]
-color=#1d1f21
+$separator
+$separator
+
+GLOBAL
 
 
+cat <<NETWORK
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [label network]
-full_text=
-color=#81a2be
+full_text=$icon_eth
+color=$base0D
 
 [iface]
 #instance=wlan0
-color=#b5bd68
+color=$base0B
 interval=10
 separator=false
 
@@ -98,17 +107,19 @@ separator=false
 #instance=eth0
 #interval=5
 
-[separator]
-color=#1d1f21
+$separator
+
+NETWORK
 
 
+cat <<CPU
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [label cpu]
-full_text=
-color=#81a2be
+full_text=$icon_cpu
+color=$base0D
 
 [cpu_usage]
 interval=5
@@ -118,16 +129,18 @@ align=right
 #[load_average]
 #interval=10
 
-[separator]
-color=#1d1f21
+$separator
+
+CPU
 
 
+cat <<MEMORY
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [label mem]
-full_text=
-color=#81a2be
+full_text=$icon_mem
+color=$base0D
 
 [memory]
 interval=5
@@ -138,47 +151,69 @@ interval=5
 # separator=false
 # interval=30
 
-[separator]
-color=#1d1f21
+$separator
+
+MEMORY
 
 
+~/dotfiles/bin/is_laptop && cat <<BATTERY
+# Battery
+#
+# The type defaults to "mem" if the instance is not specified.
+[label battery]
+full_text=$icon_battery
+color=$base0D
+
+[battery]
+interval=15
+
+$separator
+
+BATTERY
+
+
+cat <<DISK
 # Disk usage
 #
-# The directory defaults to $HOME if the instance is not specified.
+# The directory defaults to \$HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [label disk]
-full_text=
-color=#81a2be
+full_text=$icon_disk$icon_linux
+color=$base0D
 
 [disk]
 instance=/
 interval=10
 
-[separator]
-color=#1d1f21
+$separator
+
+DISK
 
 
+lsblk | grep -q /home && cat <<DISKHOME
 [label disk home]
-full_text=
-color=#81a2be
+full_text=$icon_disk$icon_home
+color=$base0D
 
 [disk]
 instance=/home
 interval=10
 
-[separator]
-color=#1d1f21
+$separator
+
+DISKHOME
 
 
+cat <<VOLUME
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
 [label volume]
-full_text=
-color=#81a2be
+full_text=$icon_vol
+color=$base0D
 
 [volume 1%]
 instance=Master
@@ -187,31 +222,35 @@ interval=once
 signal=10
 min_width=99%
 
-[separator]
-color=#1d1f21
+$separator
 
+VOLUME
 
+cat <<DATETIME
 # Date Time
 #
 [label date]
 full_text=
-color=#81a2be
+color=$base0D
 
 [date]
 command=LC_ALL=C date '+%a %d %b'
 interval=60
 
-[separator]
-color=#1d1f21
+$separator
 
 [label time]
 full_text=
-color=#81a2be
+color=$base0D
 
 [time]
 command=date '+%H:%M'
 interval=5
 
+DATETIME
+
+
+cat <<OTHER
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
@@ -252,5 +291,7 @@ interval=5
 #interval=once
 #signal=11
 
-[separator]
-color=#1d1f21
+$separator
+
+OTHER
+

@@ -337,6 +337,7 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -S
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -SIGRTMIN+10 i3blocks
 
 # Autostart applications
+exec_always --no-startup-id ~/dotfiles/i3/i3blocks.sh > ~/.config/i3/i3blocks.conf
 exec_always --no-startup-id numlockx on
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xrdb ~/.Xresources
