@@ -39,7 +39,7 @@ ln -sf $DIR/i3/i3blocks.conf $XDG_CONFIG_HOME/i3/i3blocks.conf
 
 ## Terminal
 #sudo pacman -Sy --noconfirm termite
-yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola
+yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola terminus-font-ttf
 
 ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
 
