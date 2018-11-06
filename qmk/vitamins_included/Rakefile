@@ -11,7 +11,7 @@ directory KEYMAP_DIR
 
 desc 'Symlink keymap files into QMK source tree'
 task install: KEYMAP_DIR do
-  FileUtils.ln_s([
+  FileUtils.ln_sf([
     File.expand_path('keymap.c', __dir__),
     File.expand_path('config.h', __dir__),
     File.expand_path('rules.mk', __dir__),
