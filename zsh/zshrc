@@ -84,7 +84,7 @@ HIST_STAMPS="dd-mm-yyyy"
 #   NOTE: zsh-syntax-highlighting must be LAST!
 #plugins=(git npm archlinux gulp laravel5 composer zsh-syntax-highlighting)
 
-source $DOTFILES/zsh/aliases.zsh
-
 antigen apply
+
+source $DOTFILES/zsh/aliases.zsh
 
