@@ -168,6 +168,7 @@ assign [class="(?i)Atom"] → $ws1
 assign [class="jetbrains-phpstorm"] → $ws1
 assign [class="(?i)Google-chrome"] → $ws2
 assign [class="(?i)Chromium"] → $ws2
+assign [class="(?i)Firefox"] → $ws2
 assign [class="(?i)Slack"] → $ws7
 assign [class="(?i)Thunderbird"] → $ws8
 assign [class="(?i)Wine"] → $ws9
@@ -196,7 +197,9 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="VirtualBox$"] floating enable border normal
+for_window [class="Virtualbox Manager"] floating enable border normal
+for_window [class="Virtualbox Machine"] floating disable
 for_window [class="Xfburn"] floating enable
 
 for_window [instance="crx_.*"] floating disable
@@ -300,7 +303,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Default applications
-set $browser chromium
+set $browser firefox
 set $filemanager thunar
 set $mailclient thunderbird
 set $calculator gnome-calculator
