@@ -51,8 +51,8 @@
 *.color21:      base06
 
 ! Xcursor --------------------------------------------------------------------
-Xcursor.theme: DMZ-White
-Xcursor.size: 32
+Xcursor.theme: Adwaita
+Xcursor.size: 24
 
 ! Font settings --------------------------------------------------------------
 Xft.antialias: true
