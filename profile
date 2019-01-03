@@ -4,7 +4,7 @@
 #
 
 # Disable Ctrl-S (suspend) and Ctrl-Q (resume) in terminals
-stty -ixon
+\stty -ixon
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
