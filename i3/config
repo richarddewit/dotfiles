@@ -171,6 +171,7 @@ assign [class="(?i)Chromium"] → $ws2
 assign [class="(?i)Firefox"] → $ws2
 assign [class="(?i)Slack"] → $ws7
 assign [class="(?i)Thunderbird"] → $ws8
+assign [class="(?i)Evolution"] → $ws8
 assign [class="(?i)Wine"] → $ws9
 assign [class="qemu-system-x86_64"] → $ws10
 
@@ -305,7 +306,7 @@ bindsym $mod+r mode "resize"
 # Default applications
 set $browser firefox
 set $filemanager thunar
-set $mailclient thunderbird
+set $mailclient evolution
 set $calculator gnome-calculator
 
 set $kbd_querty  "setxkbmap -layout 'us' -variant 'alt-intl-unicode' -option 'caps:ctrl_modifier'; xcape -e 'Caps_Lock=Escape'"
