@@ -54,6 +54,7 @@ source /usr/share/nvm/install-nvm-exec
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
 # DB parameter mapping to be able to use php artisan commands on host
 export DB_HOST=127.0.0.1
