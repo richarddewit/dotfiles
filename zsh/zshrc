@@ -7,12 +7,9 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle npm
 antigen bundle archlinux
-antigen bundle gulp
-antigen bundle laravel5
-antigen bundle composer
 
 # Other bundles not in oh-my-zsh
-# NOTE: zsh-syntax-highlighting must be LAST!
+# NOTE: zsh-syntax-highlighting must be the LAST bundle!
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
