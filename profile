@@ -45,10 +45,6 @@ export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
 # Dotfiles bin
 export PATH=$DOTFILES/bin:$PATH
 
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/install-nvm-exec
-
 [ -s "$(which rustc)" ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
