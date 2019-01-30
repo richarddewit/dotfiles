@@ -13,8 +13,7 @@ printf "${LINE}" "${GREEN}                  |__/                   ${NC}"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 mkdir $HOME/{tmp,zsh}
-#mkdir -p $XDG_CONFIG_HOME/{nvim,compton,dunst,gtk-3.0,termite,ranger}
-mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,ranger,Dharkael}
+mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,xfce4/terminal,ranger,Dharkael}
 
 
 ## Core
@@ -38,9 +37,11 @@ ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
 
 ## Terminal
 #sudo pacman -Sy --noconfirm --needed termite
+sudo pacman -Sy --noconfirm --needed xfce4-terminal
 yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola terminus-font-ttf otf-font-awesome-4 ttf-font-awesome-4
 
-ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
+# ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
+ln -sf $DIR/config/xfce4-terminalrc $XDG_CONFIG_HOME/xfce4/terminal/terminalrc
 
 ### Disable beep/bell
 sudo rmmod pcspkr
