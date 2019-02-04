@@ -234,7 +234,6 @@ full_text=
 color=$base0D
 
 [date]
-command=LC_ALL=C date '+%a %d %b'
 interval=60
 
 $separator
