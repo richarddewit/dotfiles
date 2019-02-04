@@ -206,6 +206,9 @@ for_window [class="Xfburn"] floating enable
 
 for_window [instance="crx_.*"] floating disable
 
+# IntelliJ focus fix
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
