@@ -58,16 +58,11 @@ ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
 ## Shell/ZSH
 sudo pacman -Sy --noconfirm --needed zsh
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -sf $DIR/profile $HOME/.profile
 ln -sf $DIR/zsh/zprofile $HOME/.zprofile
 ln -sf $DIR/zsh/zshrc $HOME/.zshrc
 
 curl -L git.io/antigen > $HOME/zsh/antigen.zsh
-
-#mkdir $ZSH_CUSTOM/{themes,plugins}
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-#wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme -O $ZSH_CUSTOM/themes/bullet-train.zsh-theme
 
 ## Custom keyboard layout
 sudo ln -sf $DIR/xkb/symbols/colemak_DvbgHm /usr/share/X11/xkb/symbols/colemak_DvbgHm
