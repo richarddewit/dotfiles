@@ -7,9 +7,10 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle npm
 antigen bundle archlinux
-antigen bundle gulp
-antigen bundle laravel5
-antigen bundle composer
+antigen bundle rails
+antigen bundle rbenv
+antigen bundle ruby
+antigen bundle rust
 
 # Other bundles not in oh-my-zsh
 antigen bundle mafredri/zsh-async
