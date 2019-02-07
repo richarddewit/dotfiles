@@ -45,15 +45,12 @@ export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
 # Dotfiles bin
 export PATH=$DOTFILES/bin:$PATH
 
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/install-nvm-exec
-
 [ -s "$(which rustc)" ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
 # DB parameter mapping to be able to use php artisan commands on host
 export DB_HOST=127.0.0.1

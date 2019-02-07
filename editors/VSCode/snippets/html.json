@@ -1,0 +1,14 @@
+{
+	"PHP Class": {
+		"prefix": "class",
+		"body": [
+			"<?php",
+			"",
+			"class ${TM_FILENAME_BASE}",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "New PHP class"
+	}
+}

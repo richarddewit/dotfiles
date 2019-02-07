@@ -13,54 +13,11 @@ antigen bundle ruby
 antigen bundle rust
 
 # Other bundles not in oh-my-zsh
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-# NOTE: zsh-syntax-highlighting must be LAST!
+# NOTE: zsh-syntax-highlighting must be the LAST bundle!
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Oh My ZSH settings
-# Path to your oh-my-zsh installation.
-export ZSH=/home/richard/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="bullet-train"
-ZSH_THEME=""
-
-# Theme settings, see https://github.com/caiogondim/bullet-train.zsh#options
-# BULLETTRAIN_PROMPT_ORDER=(
-  # time
-  # status
-  # context
-  # dir
-  # git
-# )
-# BULLETTRAIN_CONTEXT_DEFAULT_USER='richard'
-# BULLETTRAIN_DIR_FG='black'
-# BULLETTRAIN_NVM_FG='black'
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Load the theme.
+antigen theme denysdovhan/spaceship-prompt
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -85,7 +42,65 @@ HIST_STAMPS="dd-mm-yyyy"
 #   NOTE: zsh-syntax-highlighting must be LAST!
 #plugins=(git npm archlinux gulp laravel5 composer zsh-syntax-highlighting)
 
+###############################################################################
+# Spaceship prompt options                                                    #
+# https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md #
+###############################################################################
+# Order
+SPACESHIP_PROMPT_ORDER=(
+  # time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  elixir        # Elixir section
+  golang        # Go section
+  php           # PHP section
+  rust          # Rust section
+  docker        # Docker section
+  venv          # virtualenv section
+  pyenv         # Pyenv section
+  ember         # Ember.js section
+  # exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+SPACESHIP_RPROMPT_ORDER=(
+  time          # Time stamps section
+  exec_time     # Execution time
+)
+# Prompt
+SPACESHIP_PROMPT_DEFAULT_PREFIX="  "
+SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+# Char
+SPACESHIP_CHAR_PREFIX=""
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_SYMBOL="$"
+# SPACESHIP_CHAR_SYMBOL="ஃ"
+# SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SYMBOL_SECONDARY="❯ "
+SPACESHIP_CHAR_COLOR_SECONDARY="black"
+# Time (time)
+SPACESHIP_TIME_SHOW=true
+# Directory (dir)
+SPACESHIP_DIR_PREFIX="  "
+SPACESHIP_DIR_TRUNC=4
+# Git (git)
+SPACESHIP_GIT_PREFIX="  "
+# Battery (battery)
+SPACESHIP_BATTERY_SHOW=false
+
+# Apply antigen configs
 antigen apply
 
 source $DOTFILES/zsh/aliases.zsh
+
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 

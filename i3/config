@@ -26,8 +26,9 @@ hide_edge_borders none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+# bindsym $mod+Return exec urxvt
 # bindsym $mod+Return exec termite
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -163,12 +164,12 @@ bindsym $mod+Control+Right move workspace to output right
 #   floating    (matches floating windows)
 #   tiling      (matches tiling windows)
 # Open applications on specific workspaces
-assign [class="(?i)Emacs"] → $ws1
-assign [class="(?i)Atom"] → $ws1
-assign [class="jetbrains-phpstorm"] → $ws1
-assign [class="(?i)Google-chrome"] → $ws2
-assign [class="(?i)Chromium"] → $ws2
-assign [class="(?i)Firefox"] → $ws2
+# assign [class="(?i)Emacs"] → $ws1
+# assign [class="(?i)Atom"] → $ws1
+# assign [class="jetbrains-phpstorm"] → $ws1
+# assign [class="(?i)Google-chrome"] → $ws2
+# assign [class="(?i)Chromium"] → $ws2
+# assign [class="(?i)Firefox"] → $ws2
 assign [class="(?i)Slack"] → $ws7
 assign [class="(?i)Thunderbird"] → $ws8
 assign [class="(?i)Evolution"] → $ws8
@@ -206,6 +207,9 @@ for_window [class="Steam"] floating enable border normal
 
 for_window [instance="crx_.*"] floating disable
 
+# IntelliJ focus fix
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

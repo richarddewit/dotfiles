@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+LC_ALL=C date '+%a %d %b'
+
+calendar='/usr/bin/california'
+case $BLOCK_BUTTON in
+  1) [ -f $calendar ] && $calendar ;;
+esac

@@ -1,0 +1,43 @@
+{
+	"Public Function": {
+		"prefix": "pubf",
+		"body": [
+			"public function $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "New public method"
+	},
+	"Protected Function": {
+		"prefix": "prof",
+		"body": [
+			"protected function $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "New protected method"
+	},
+	"Class": {
+		"prefix": "class",
+		"body": [
+			"class ${TM_FILENAME_BASE}",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "New Class"
+	},
+	"PHPUnit Test case": {
+		"prefix": "test",
+		"body": [
+			"/** @test */",
+			"public function $1()",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "New PHPUnit test case"
+	}
+}
