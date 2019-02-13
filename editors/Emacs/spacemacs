@@ -154,7 +154,9 @@ This function should only modify configuration layer settings."
      ;; swift
      (typescript :variables
                  typescript-backend 'tide
-                 tide-tsserver-executable nil)
+                 tide-tsserver-executable nil
+                 typescript-fmt-tool 'typescript-formatter
+                 typescript-fmt-on-save t)
      ;; vimscript
      ;; windows-scripts
      yaml
