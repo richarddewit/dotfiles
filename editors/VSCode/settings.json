@@ -843,5 +843,6 @@
   "vim.statusBarColors.insert": "#83a598",
   "vim.statusBarColors.visual": "#fb4934 ",
   "vim.statusBarColors.visualline": "#fabd2f",
-  "vim.statusBarColors.visualblock": "#d3869b"
+  "vim.statusBarColors.visualblock": "#d3869b",
+  "vim.neovimPath": "/usr/bin/nvim"
 }
