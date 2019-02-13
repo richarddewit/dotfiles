@@ -39,18 +39,16 @@ fi
 export DOTFILES=$HOME/dotfiles
 
 # $PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=./bin:$HOME/bin:/usr/local/bin:$PATH
 # Composer
 export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
 # Dotfiles bin
 export PATH=$DOTFILES/bin:$PATH
 
 [ -s "$(which rustc)" ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-[ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-[ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
 # DB parameter mapping to be able to use php artisan commands on host
 export DB_HOST=127.0.0.1

@@ -61,6 +61,7 @@ sudo pacman -Sy --noconfirm --needed zsh
 ln -sf $DIR/profile $HOME/.profile
 ln -sf $DIR/zsh/zprofile $HOME/.zprofile
 ln -sf $DIR/zsh/zshrc $HOME/.zshrc
+ln -sf $DIR/zsh/zshenv $HOME/.zshenv
 
 curl -L git.io/antigen > $HOME/zsh/antigen.zsh
 
