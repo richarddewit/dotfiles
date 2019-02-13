@@ -468,7 +468,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -707,6 +707,9 @@ before packages are loaded."
   ;; Hooks
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
+
+  ;; Purpose
+  (setq purpose-layout-dirs (append '("~/dotfiles/editors/Emacs/purpose-layouts/") purpose-layout-dirs))
 
   )
 
