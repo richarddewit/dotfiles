@@ -45,3 +45,13 @@ alias hsssh="homestead ssh -- -t \"cd projects/`basename \"$PWD\"`; /bin/bash\""
 alias hsus=hssus
 alias hssh=hsssh
 alias hsedit="vim ~/Homestead/Homestead.yaml"
+
+# Emacs
+function emc() {
+  dir=${1:-.}
+  if [ -n "$(ps -ax | grep "[e]macs --daemon")" ]; then
+    emacsclient -a '' -n $dir
+  else
+    emacsclient -a '' -c -n $dir
+  fi
+}
