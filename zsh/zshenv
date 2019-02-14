@@ -1,4 +1,2 @@
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
-
-[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
