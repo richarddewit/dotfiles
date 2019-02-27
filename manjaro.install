@@ -10,63 +10,27 @@ printf "${LINE}" "${GREEN}| |  | | (_| | | | || | (_| | | | (_) |  ${NC}"      "
 printf "${LINE}" "${GREEN}|_|  |_|\\__,_|_| |_|/ |\\__,_|_|  \\___/   ${NC}"   "(_)__,_|\\___/ \\__|_| |_|_|\\___||___/"
 printf "${LINE}" "${GREEN}                  |__/                   ${NC}"
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
-mkdir $HOME/{tmp,zsh}
-mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,xfce4/terminal,ranger,Dharkael}
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-
+# Install Manjaro packages
 ## Core
 sudo pacman -Sy --noconfirm --needed yay git the_silver_searcher sysstat flameshot udiskie thunar
 yay -Sy --noconfirm --needed chromium-widevine nvm {,python{,2}-}neovim dropbox xbanish
 
-ln -sf $DIR/Xresources $HOME/.Xresources
-ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
-ln -sf $DIR/git/gitconfig $HOME/.gitconfig
-ln -sf $DIR/config/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
-ln -sf $DIR/config/flameshot.ini $XDG_CONFIG_HOME/Dharkael/flameshot.ini
-
 ## i3wm
 sudo pacman -Sy --noconfirm --needed i3blocks rofi numlockx xtitle xcape
-
-#ln -sf $DIR/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
-ln -sf $DIR/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
-ln -sf $DIR/i3/config $XDG_CONFIG_HOME/i3/config
-#sudo ln -sf $DIR/bin/fix_xcursor /usr/local/bin/fix_xcursor
-#sudo chmod +x /usr/local/bin/fix_xcursor
 
 ## Terminal
 #sudo pacman -Sy --noconfirm --needed termite
 sudo pacman -Sy --noconfirm --needed xfce4-terminal
 yay -Sy --noconfirm --needed powerline-fonts-git ttf-fira-code ttf-symbola terminus-font-ttf otf-font-awesome-4 ttf-font-awesome-4
 
-# ln -sf $DIR/config/termite-config $XDG_CONFIG_HOME/termite/config
-ln -sf $DIR/config/xfce4-terminalrc $XDG_CONFIG_HOME/xfce4/terminal/terminalrc
-
-### Disable beep/bell
-sudo rmmod pcspkr
-echo "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
-
-
-## THEMING
-sudo pacman -Sy --noconfirm --needed numix-gtk-theme
+## Theming
+sudo pacman -Sy --noconfirm --needed numix-gtk-theme lxappearance
 yay -Sy --noconfirm --needed numix-circle-arc-icons-git
-ln -sf $DIR/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
-ln -sf $DIR/gtk/gtk3-settings.ini $XDG_CONFIG_HOME/gtk-3.0/settings.ini
-ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
-
 
 ## Shell/ZSH
 sudo pacman -Sy --noconfirm --needed zsh
-ln -sf $DIR/profile $HOME/.profile
-ln -sf $DIR/zsh/zprofile $HOME/.zprofile
-ln -sf $DIR/zsh/zshrc $HOME/.zshrc
-ln -sf $DIR/zsh/zshenv $HOME/.zshenv
 
-curl -L git.io/antigen > $HOME/zsh/antigen.zsh
-
-## Custom keyboard layout
-sudo ln -sf $DIR/xkb/symbols/colemak_DvbgHm /usr/share/X11/xkb/symbols/colemak_DvbgHm
-
-mkdir ~/.screenlayout
-touch ~/.screenlayout/screenlayout.sh
+$dir/system-agnostic.install
+$dir/links.install
