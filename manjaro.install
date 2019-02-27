@@ -14,11 +14,19 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install Manjaro packages
 ## Core
-sudo pacman -Sy --noconfirm --needed yay git the_silver_searcher sysstat flameshot udiskie thunar
-yay -Sy --noconfirm --needed chromium-widevine nvm {,python{,2}-}neovim dropbox xbanish
+sudo pacman -Sy --noconfirm --needed yay git vim the_silver_searcher sysstat flameshot udiskie thunar baobab htop
+yay -Sy --noconfirm --needed chromium-widevine {,python-}neovim dropbox xbanish gksu
+
+## Apps
+sudo pacman -Sy --noconfirm --needed firefox firefox-i18n-en-gb firefox-i18n-en-us firefox-i18n-nl gnome-calculator evolution evolution-ews
+yay -Sy --noconfirm --needed california
+
+## Development
+sudo pacman -Sy --noconfirm --needed emacs dbeaver
+yay -Sy --noconfirm --needed nvm rbenv ruby-build sublime-text-dev visual-studio-code-bin
 
 ## i3wm
-sudo pacman -Sy --noconfirm --needed i3blocks rofi numlockx xtitle xcape
+sudo pacman -Sy --noconfirm --needed i3blocks rofi numlockx xtitle xcape xautolock
 
 ## Terminal
 #sudo pacman -Sy --noconfirm --needed termite
