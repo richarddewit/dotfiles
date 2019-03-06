@@ -10,7 +10,6 @@ antigen bundle archlinux
 antigen bundle rails
 antigen bundle rbenv
 antigen bundle ruby
-antigen bundle rust
 antigen bundle django
 
 # Other bundles not in oh-my-zsh

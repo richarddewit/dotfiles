@@ -147,7 +147,7 @@ This function should only modify configuration layer settings."
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv)
-     rust
+     ;; rust
      ;; scala
      ;; scheme
      ;; shaders

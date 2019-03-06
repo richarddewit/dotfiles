@@ -46,7 +46,6 @@ export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
 # Dotfiles bin
 export PATH=$DOTFILES/bin:$PATH
 
-[ -s "$(which rustc)" ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
