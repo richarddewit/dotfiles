@@ -46,6 +46,10 @@ alias hsus=hssus
 alias hssh=hsssh
 alias hsedit="vim ~/Homestead/Homestead.yaml"
 
+# Python/Django
+alias m='python manage.py'
+alias pi='pipenv install'
+
 # Emacs
 function emc() {
   dir=${1:-.}

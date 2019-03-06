@@ -1,2 +1,12 @@
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+
+[ -s "$(which pyenv)" ] && eval "$(pyenv init -)"
+
+export PROJECT_HOME=$HOME/dev/python
+export WORKON_HOME=$PROJECT_HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+[ ! -d "$PROJECT_HOME" ] && mkdir -p $PROJECT_HOME
+[ -s "$VIRTUALENVWRAPPER_SCRIPT" ] && source $VIRTUALENVWRAPPER_SCRIPT

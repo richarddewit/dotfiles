@@ -80,7 +80,7 @@ This function should only modify configuration layer settings."
      ;; mu4e
 
      ;; 7 Frameworks
-     ;; django
+     django
      phoenix
      react
      ruby-on-rails
@@ -139,7 +139,10 @@ This function should only modify configuration layer settings."
      ;;      phpcbf-standard "PSR2")
      ;; plantuml
      ;; purescript
-     ;; python
+     (python :variables
+             python-backend 'anaconda
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t)
      ;; racket
      (ruby :variables
            ruby-enable-enh-ruby-mode t
@@ -215,6 +218,7 @@ This function should only modify configuration layer settings."
      ;; fasd
      ;; finance
      ;; geolocation
+     lsp
      ;; imenu-list
      ;; nginx
      ;; pandoc
@@ -683,8 +687,10 @@ before packages are loaded."
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 
-  ;; Consistent 2 spaces indenting
+  ;; Indentation
   (setq-default
+   ;; python-mode
+   python-indent-offset 4
    ;; js2-mode
    js2-basic-offset 2
    ;; web-mode
@@ -708,6 +714,15 @@ before packages are loaded."
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
 
+  (defun richarddewit/django-web-mode-engine ()
+    (if (projectile-project-p)
+        (if (file-exists-p (concat (projectile-project-root) "manage.py"))
+            (web-mode-set-engine "django")
+          )
+      )
+    )
+  (add-hook 'web-mode-hook 'richarddewit/django-web-mode-engine)
+
   ;; Purpose
   (setq purpose-layout-dirs (append '("~/dotfiles/editors/Emacs/purpose-layouts/") purpose-layout-dirs))
 
@@ -725,9 +740,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (treemacs-evil robe doom-modeline counsel ivy magit transient lv all-the-icons treemacs yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vue-mode volatile-highlights uuidgen use-package treemacs-projectile toml-mode toc-org tide tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop seeing-is-believing sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode rjsx-mode restart-emacs rbenv ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer pug-mode projectile-rails prettier-js popwin pfuture persp-mode password-generator paradox overseer org-bullets open-junk-file ob-elixir nameless multi-term move-text minitest markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum livid-mode link-hint json-navigator json-mode js2-refactor js-doc insert-shebang indent-guide impatient-mode ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md ggtags fuzzy font-lock+ flycheck-rust flycheck-pos-tip flycheck-mix flycheck-credo flycheck-bashate flx-ido fish-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dotenv-mode diminish diff-hl define-word darktooth-theme counsel-projectile company-web company-tern company-statistics company-shell company-quickhelp company-emoji column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent add-node-modules-path ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (pony-mode yapfify stickyfunc-enhance pyvenv pytest pyenv-mode py-isort pippel pipenv pip-requirements live-py-mode importmagic epc ctable concurrent deferred helm-pydoc helm-cscope xcscope cython-mode counsel-gtags company-anaconda anaconda-mode pythonic tide robe yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vue-mode volatile-highlights uuidgen use-package typescript-mode treemacs-projectile treemacs-evil toml-mode toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode rjsx-mode restart-emacs rbenv ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer pug-mode projectile-rails prettier-js popwin persp-mode password-generator paradox overseer org-bullets open-junk-file ob-elixir nameless multi-term move-text minitest markdown-toc magit-svn magit-gitflow macrostep lsp-ui lorem-ipsum livid-mode link-hint json-navigator json-mode js2-refactor js-doc insert-shebang indent-guide impatient-mode ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md ggtags fuzzy font-lock+ flycheck-rust flycheck-pos-tip flycheck-mix flycheck-credo flycheck-bashate flx-ido fish-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish diff-hl define-word darktooth-theme counsel-projectile company-web company-tern company-statistics company-shell company-quickhelp company-lsp company-emoji column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent add-node-modules-path ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
