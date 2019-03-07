@@ -59,3 +59,6 @@ function emc() {
     emacsclient -a '' -c -n $dir
   fi
 }
+
+# Docker
+source $DOTFILES/zsh/docker-aliases.zsh
