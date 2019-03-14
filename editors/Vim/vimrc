@@ -61,6 +61,7 @@
 " Other
   Plug 'chr4/nginx.vim'
   Plug 'tpope/vim-markdown'
+  Plug 'cespare/vim-toml'
 
 
 " Utils
