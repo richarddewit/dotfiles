@@ -844,5 +844,8 @@
   "vim.statusBarColors.visual": "#fb4934 ",
   "vim.statusBarColors.visualline": "#fabd2f",
   "vim.statusBarColors.visualblock": "#d3869b",
-  "vim.neovimPath": "/usr/bin/nvim"
+  "vim.neovimPath": "/usr/bin/nvim",
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.keymap": "alternate",
+  "git.autofetch": true
 }

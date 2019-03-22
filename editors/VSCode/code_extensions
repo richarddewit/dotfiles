@@ -7,11 +7,13 @@ bmewburn.vscode-intelephense-client
 bungcip.better-toml
 castwide.solargraph
 cjhowe7.laravel-blade
+codezombiech.gitignore
 codingyu.laravel-goto-view
 CoenraadS.bracket-pair-colorizer
 cssho.vscode-svgviewer
 dkundel.vscode-new-file
 dsznajder.es7-react-js-snippets
+eamodio.gitlens
 ecmel.vscode-html-css
 ecodes.vscode-phpmd
 EditorConfig.EditorConfig
@@ -30,6 +32,7 @@ LaurentTreguier.vscode-simple-icons
 linyang95.php-symbols
 MehediDracula.php-constructor
 mgmcdermott.vscode-language-babel
+michelemelluso.gitignore
 mikestead.dotenv
 misogi.ruby-rubocop
 mrmlnc.vscode-scss
@@ -43,9 +46,10 @@ OfHumanBondage.react-proptypes-intellisense
 onecentlin.laravel-blade
 onecentlin.laravel5-snippets
 patbenatar.advanced-new-file
+PeterJausovec.vscode-docker
 rebornix.ruby
 richie5um2.vscode-sort-json
-robertohuertasm.vscode-icons
+vscode-icons-team.vscode-icons
 rust-lang.rust
 ryannaddy.laravel-artisan
 serayuzgur.crates
