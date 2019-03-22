@@ -6,6 +6,7 @@ belfz.search-crates-io
 bmewburn.vscode-intelephense-client
 bungcip.better-toml
 castwide.solargraph
+chrislajoie.vscode-modelines
 cjhowe7.laravel-blade
 codezombiech.gitignore
 codingyu.laravel-goto-view
@@ -22,6 +23,7 @@ felixfbecker.php-debug
 felixfbecker.php-intellisense
 formulahendry.auto-rename-tag
 glen-84.sass-lint
+hangxingliu.vscode-nginx-conf-hint
 hollowtree.vue-snippets
 HookyQR.beautify
 ikappas.phpcs
@@ -49,7 +51,6 @@ patbenatar.advanced-new-file
 PeterJausovec.vscode-docker
 rebornix.ruby
 richie5um2.vscode-sort-json
-vscode-icons-team.vscode-icons
 rust-lang.rust
 ryannaddy.laravel-artisan
 serayuzgur.crates
@@ -58,6 +59,7 @@ smlombardi.slime
 stef-k.laravel-goto-controller
 tickleforce.scrolloff
 tomphilbin.gruvbox-themes
+vscode-icons-team.vscode-icons
 vscodevim.vim
 wix.glean
 Zignd.html-css-class-completion
