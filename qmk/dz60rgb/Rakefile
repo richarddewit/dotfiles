@@ -28,7 +28,7 @@ end
 
 desc 'Make keymap and flash board'
 task :makeflash do
-  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}:avrdude" }
+  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}:dfu-util-wait" }
 end
 
 #desc 'Make keymap and flash board'

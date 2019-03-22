@@ -1,4 +1,4 @@
-include QMK_KEYBOARD_H
+#include QMK_KEYBOARD_H
 extern bool g_suspend_state;
 
 // Layers
@@ -154,9 +154,9 @@ void rgb_matrix_indicators_user(void) {
         rgb_matrix_set_color(62, 0x00, 0x00, 0x00);
         break;
 
-      case _LAYER4:
+      /*case _LAYER4:
         rgb_matrix_layer_helper(0xFF, 0xFF, 0x00, false);
-        break;
+        break;*/
     }
   }
   if ( this_led & (1<<USB_LED_CAPS_LOCK)) {
