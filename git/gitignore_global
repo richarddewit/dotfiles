@@ -7,6 +7,7 @@
 .smbdelete*
 
 .idea/
+.vscode/
 
 \#*\#
 .projectile
