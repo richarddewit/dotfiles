@@ -1,9 +1,11 @@
 aaron-bond.better-comments
 AiryShift.spaces-inside-braces
 alefragnani.project-manager
+apedroed.Happy-Flasker
 austenc.laravel-blade-spacer
 belfz.search-crates-io
 bmewburn.vscode-intelephense-client
+brainfit.vscode-importmagic
 bungcip.better-toml
 castwide.solargraph
 chrislajoie.vscode-modelines
@@ -22,6 +24,7 @@ esbenp.prettier-vscode
 felixfbecker.php-debug
 felixfbecker.php-intellisense
 formulahendry.auto-rename-tag
+formulahendry.docker-explorer
 glen-84.sass-lint
 hangxingliu.vscode-nginx-conf-hint
 hollowtree.vue-snippets
