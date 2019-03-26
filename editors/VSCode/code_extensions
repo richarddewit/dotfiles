@@ -5,7 +5,6 @@ apedroed.Happy-Flasker
 belfz.search-crates-io
 brainfit.vscode-importmagic
 bungcip.better-toml
-castwide.solargraph
 chrislajoie.vscode-modelines
 codezombiech.gitignore
 CoenraadS.bracket-pair-colorizer
@@ -28,7 +27,6 @@ LaurentTreguier.vscode-simple-icons
 mgmcdermott.vscode-language-babel
 michelemelluso.gitignore
 mikestead.dotenv
-misogi.ruby-rubocop
 mrmlnc.vscode-scss
 ms-python.python
 naumovs.node-modules-resolve
@@ -38,7 +36,6 @@ octref.vetur
 OfHumanBondage.react-proptypes-intellisense
 patbenatar.advanced-new-file
 PeterJausovec.vscode-docker
-rebornix.ruby
 richie5um2.vscode-sort-json
 rust-lang.rust
 serayuzgur.crates
