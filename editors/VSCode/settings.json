@@ -847,5 +847,7 @@
   "vim.neovimPath": "/usr/bin/nvim",
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.keymap": "alternate",
-  "git.autofetch": true
+  "git.autofetch": true,
+  "workbench.sideBar.location": "left",
+  "gitlens.codeLens.enabled": false
 }
