@@ -9,3 +9,4 @@ alias dcr='docker-compose down && docker-compose up --build'
 alias dcrd='docker-compose down && docker-compose up -d --build'
 
 alias dtop='docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}"'
+alias dnuke='docker container prune && docker image prune --all && docker volume prune'
