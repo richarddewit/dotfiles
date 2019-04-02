@@ -40,18 +40,14 @@ fi
 export DOTFILES=$HOME/dotfiles
 
 # $PATH
-export PATH=./bin:$HOME/bin:/usr/local/bin:$PATH
-# Composer
-export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH
+export PATH="./bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 # Dotfiles bin
-export PATH=$DOTFILES/bin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+export PATH="$DOTFILES/bin:$PATH"
+# Composer
+export PATH="$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH"
+# Node/NPM/Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# DB parameter mapping to be able to use php artisan commands on host
-export DB_HOST=127.0.0.1
-export DB_PORT=33060
+# Dart
+export PATH="$HOME/.pub-cache/bin:$PATH"
 
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile
