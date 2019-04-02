@@ -69,22 +69,6 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["u"],
-      "commands": [
-        {
-          "command": "undo"
-        }
-      ]
-    },
-    {
-      "before": ["<C-r>"],
-      "commands": [
-        {
-          "command": "redo"
-        }
-      ]
-    },
-    {
       "after": ["g", "j"],
       "before": ["j"]
     },
@@ -825,7 +809,6 @@
   "editor.find.autoFindInSelection": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "files.trimTrailingWhitespace": true,
   "workbench.activityBar.visible": false,
   "search.smartCase": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
@@ -849,5 +832,7 @@
   "gitlens.keymap": "alternate",
   "git.autofetch": true,
   "workbench.sideBar.location": "left",
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "prettier.trailingComma": "es5",
+  "prettier.disableLanguages": ["markdown"]
 }
