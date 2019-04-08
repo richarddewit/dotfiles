@@ -62,8 +62,6 @@
   "terminal.external.linuxExec": "urxvt",
   "terminal.integrated.fontSize": 12,
   "vim.easymotion": true,
-  "vim.enableNeovim": true,
-  "vim.foldfix": true,
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": "<space>",
@@ -809,7 +807,6 @@
   "editor.find.autoFindInSelection": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "workbench.activityBar.visible": false,
   "search.smartCase": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "rust.rustup": {
@@ -834,5 +831,22 @@
   "workbench.sideBar.location": "left",
   "gitlens.codeLens.enabled": false,
   "prettier.trailingComma": "es5",
-  "prettier.disableLanguages": ["markdown"]
+  "prettier.disableLanguages": [
+    "markdown"
+  ],
+  "vim.easymotionMarkerFontFamily": "Fira Mono",
+  "vim.highlightedyank.enable": true,
+  "svgviewer.enableautopreview": true,
+  "python.jediEnabled": false,
+  "python.venvPath": "$WORKON_HOME",
+  "dart.allowAnalytics": false,
+  "docker-explorer.enableTelemetry": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "window.restoreWindows": "folders",
+  "workbench.activityBar.visible": false,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "vsicons.projectDetection.autoReload": true,
+  "docker-explorer.showAzureRegistries": false,
+  "docker-explorer.showSuggestedDockerImages": false,
+  "docker-explorer.showDockerHubTreeView": false
 }
