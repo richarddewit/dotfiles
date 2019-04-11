@@ -716,7 +716,11 @@ before packages are loaded."
 
   (defun richarddewit/django-web-mode-engine ()
     (if (projectile-project-p)
-        (if (file-exists-p (concat (projectile-project-root) "manage.py"))
+        (if (or
+             (file-exists-p (concat (projectile-project-root) "Pipfile"))
+             (file-exists-p (concat (projectile-project-root) "requirements.txt"))
+             (file-exists-p (concat (projectile-project-root) "manage.py"))
+             )
             (web-mode-set-engine "django")
           )
       )
