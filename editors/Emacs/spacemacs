@@ -759,6 +759,13 @@ before packages are loaded."
     )
   (add-hook 'web-mode-hook 'richarddewit/django-web-mode-engine)
 
+  (add-hook
+   'company-completion-started-hook
+   (lambda (&rest ignore)
+     (when evil-mode
+       (when (evil-insert-state-p)
+         (define-key evil-insert-state-map (kbd "C-k") nil)))))
+
   ;; Purpose
   (require 'window-purpose)
   (push "~/dotfiles/editors/Emacs/purpose-layouts" purpose-layout-dirs)
