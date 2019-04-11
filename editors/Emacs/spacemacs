@@ -709,6 +709,32 @@ before packages are loaded."
   ;; Projectile
   (setq projectile-globally-ignored-directories (append '("_build" "node_modules") projectile-globally-ignored-directories))
   (setq projectile-globally-ignored-files       (append '("*.bak" "*.old") projectile-globally-ignored-files))
+  ;; Snippets
+  (require 'web-mode)
+  (defcustom my-web-yas-mode-alist
+    '(("erb" . erb)
+      ("django" . django))
+    ""
+    :group 'web-mode
+    :type '(repeat (cons
+                    :tag "Map engine name to mode"
+                    (string :tag "Engine Name")
+                    (symbol :tag "Mode"))))
+
+  (defun my-web-setup-yas ()
+    "Setup yas according to `web-mode-engine`."
+    (require 'yasnippet)
+    (let ((extra-mode (cdr (assoc-string web-mode-engine my-web-yas-mode-alist))))
+      (when extra-mode
+        (yas-activate-extra-mode extra-mode))))
+
+  (advice-add 'web-mode-on-engine-setted :after #'my-web-setup-yas)
+
+  (eval-after-load 'yasnippet
+    '(let ((dir "~/dotfiles/editors/Emacs/snippets/web-mode-engines"))
+       (add-to-list 'yas-snippet-dirs "~/dotfiles/editors/Emacs/snippets/")
+       (add-to-list 'yas-snippet-dirs dir)
+       (yas-load-directory dir)))
 
   ;; Hooks
   (add-hook 'ruby-mode-hook 'robe-mode)
