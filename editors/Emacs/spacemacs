@@ -754,7 +754,8 @@ before packages are loaded."
   (add-hook 'web-mode-hook 'richarddewit/django-web-mode-engine)
 
   ;; Purpose
-  (setq purpose-layout-dirs (append '("~/dotfiles/editors/Emacs/purpose-layouts/") purpose-layout-dirs))
+  (require 'window-purpose)
+  (push "~/dotfiles/editors/Emacs/purpose-layouts" purpose-layout-dirs)
 
   )
 
