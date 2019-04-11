@@ -263,6 +263,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(vue-mode
+                                      dart-mode
                                       pug-mode)
 
    ;; A list of packages that cannot be updated.
@@ -678,6 +679,8 @@ before packages are loaded."
    scroll-margin 20
    python-indent-guess-indent-offset nil
    python-indent-guess-indent-offset-verbose nil
+   dart-format-on-save t
+   lsp-auto-guess-root t
    )
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
@@ -709,6 +712,8 @@ before packages are loaded."
   ;; Projectile
   (setq projectile-globally-ignored-directories (append '("_build" "node_modules") projectile-globally-ignored-directories))
   (setq projectile-globally-ignored-files       (append '("*.bak" "*.old") projectile-globally-ignored-files))
+  (setq projectile-project-root-files-bottom-up (append '("pubspec.yaml" "BUILD") projectile-project-root-files-bottom-up))
+
   ;; Snippets
   (require 'web-mode)
   (defcustom my-web-yas-mode-alist
@@ -739,6 +744,7 @@ before packages are loaded."
   ;; Hooks
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  (add-hook 'dart-mode-hook 'lsp)
 
   (defun richarddewit/django-web-mode-engine ()
     (if (projectile-project-p)
