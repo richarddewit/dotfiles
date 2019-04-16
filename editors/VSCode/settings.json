@@ -40,7 +40,6 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "html-css-class-completion.enableEmmetSupport": true,
-  "html.format.wrapAttributes": "force-expand-multiline",
   "javascript.commonjs.resolve.extensions": [".js", ".vue"],
   "javascript.commonjs.resolve.languages": [
     "javascript",
@@ -848,5 +847,9 @@
   "vsicons.projectDetection.autoReload": true,
   "docker-explorer.showAzureRegistries": false,
   "docker-explorer.showSuggestedDockerImages": false,
-  "docker-explorer.showDockerHubTreeView": false
+  "docker-explorer.showDockerHubTreeView": false,
+  "update.enableWindowsBackgroundUpdates": false,
+  "update.mode": "manual",
+  "html.format.wrapLineLength": 180,
+  "html.format.wrapAttributes": "preserve-aligned"
 }
