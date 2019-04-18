@@ -682,6 +682,7 @@ before packages are loaded."
    dart-format-on-save t
    lsp-auto-guess-root t
    )
+  (evil-ex-define-cmd "q[uit]" 'evil-delete-buffer)
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
