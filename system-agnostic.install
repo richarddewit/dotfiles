@@ -11,3 +11,6 @@ curl -L git.io/antigen > $HOME/zsh/antigen.zsh
 ## xrandr
 mkdir -p ~/.screenlayout
 touch ~/.screenlayout/screenlayout.sh
+
+## Folders
+mkdir -p ~/Pictures/screenshots
