@@ -70,6 +70,7 @@
   "prettier.trailingComma": "es5",
   "python.jediEnabled": false,
   "python.venvPath": "$WORKON_HOME",
+  "python.linting.pylintArgs": ["--rcfile=setup.cfg"],
   "search.smartCase": true,
   "svgviewer.enableautopreview": true,
   "telemetry.enableCrashReporter": false,
@@ -85,14 +86,6 @@
   "vim.incsearch": true,
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "after": ["g", "j"],
-      "before": ["j"]
-    },
-    {
-      "after": ["g", "k"],
-      "before": ["k"]
-    },
     {
       "after": [],
       "before": ["<leader>", "<space>"],
@@ -821,8 +814,8 @@
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "statusBar.background": "#b8bb26",
-    "statusBar.debuggingBackground": "#b8bb26",
-    "statusBar.noFolderBackground": "#b8bb26"
+    "statusBar.noFolderBackground": "#b8bb26",
+    "statusBar.debuggingBackground": "#b8bb26"
   },
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
   "workbench.editor.enablePreviewFromQuickOpen": false,
