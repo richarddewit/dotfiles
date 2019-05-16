@@ -79,9 +79,9 @@ This function should only modify configuration layer settings."
 
      ;; 7 Frameworks
      django
-     phoenix
+     ;; phoenix
      react
-     ruby-on-rails
+     ;; ruby-on-rails
 
      ;; 8 Fun
      emoji
@@ -105,10 +105,10 @@ This function should only modify configuration layer settings."
      ;; csharp
      ;; csv
      ;; d
-     elixir
+     ;; elixir
      ;; elm
      emacs-lisp
-     erlang
+     ;; erlang
      ;; ess
      ;; extra-langs
      ;; faust
@@ -142,9 +142,9 @@ This function should only modify configuration layer settings."
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t)
      ;; racket
-     (ruby :variables
-           ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rbenv)
+     ;; (ruby :variables
+     ;;       ruby-enable-enh-ruby-mode t
+     ;;       ruby-version-manager 'rbenv)
      ;; rust
      ;; scala
      ;; scheme
@@ -212,7 +212,7 @@ This function should only modify configuration layer settings."
      ;; command-log
      ;; dash
      ;; deft
-     ;; docker
+     docker
      ;; fasd
      ;; finance
      ;; geolocation
@@ -743,8 +743,8 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
   (add-hook 'dart-mode-hook 'lsp)
 
   (defun richarddewit/django-web-mode-engine ()
@@ -787,7 +787,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets xterm-color writeroom-mode visual-fill-column web-mode treemacs-projectile tide spaceline-all-the-icons ruby-test-mode rubocop rspec-mode robe rjsx-mode pipenv paradox magit-svn lsp-ui live-py-mode link-hint hl-todo helm-make gruvbox-theme git-timemachine git-link ggtags eyebrowse expand-region evil-surround evil-nerd-commenter evil-matchit evil-magit erlang enh-ruby-mode emojify editorconfig dumb-jump doom-modeline all-the-icons diff-hl counsel-projectile counsel swiper ivy company-lsp lsp-mode centered-cursor-mode auto-yasnippet aggressive-indent ace-link anzu elixir-mode flycheck company window-purpose helm helm-core multiple-cursors magit-popup magit transient git-commit with-editor markdown-mode inf-ruby projectile haml-mode js2-mode powerline treemacs ht pfuture ace-window avy dash which-key use-package hydra org-plus-contrib evil yapfify yaml-mode ws-butler winum web-beautify vue-mode volatile-highlights uuidgen typescript-mode treemacs-evil toc-org tagedit symon string-inflection spinner spaceline smeargle slim-mode shrink-path shell-pop seeing-is-believing sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax restart-emacs rbenv ranger rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails prettier-js popwin pony-mode pippel pip-requirements persp-mode pcre2el password-generator overseer org-bullets open-junk-file ob-elixir nameless multi-term move-text minitest memoize markdown-toc magit-gitflow macrostep lv lorem-ipsum livid-mode json-navigator json-mode js2-refactor js-doc insert-shebang indent-guide importmagic impatient-mode imenu-list ibuffer-projectile hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag goto-chg google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-messenger git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-pos-tip flycheck-mix flycheck-credo flycheck-bashate flx-ido fish-mode fill-column-indicator feature-mode fancy-battery evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-numbers evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus emmet-mode elisp-slime-nav eldoc-eval dotenv-mode diminish define-word dart-mode darktooth-theme cython-mode company-web company-tern company-statistics company-shell company-quickhelp company-emoji company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby bundler browse-at-remote bind-key auto-highlight-symbol auto-compile async alchemist add-node-modules-path ace-jump-helm-line ac-ispell))))
+    (dockerfile-mode docker tablist docker-tramp yasnippet-snippets xterm-color writeroom-mode visual-fill-column web-mode treemacs-projectile tide spaceline-all-the-icons ruby-test-mode rubocop rspec-mode robe rjsx-mode pipenv paradox magit-svn lsp-ui live-py-mode link-hint hl-todo helm-make gruvbox-theme git-timemachine git-link ggtags eyebrowse expand-region evil-surround evil-nerd-commenter evil-matchit evil-magit erlang enh-ruby-mode emojify editorconfig dumb-jump doom-modeline all-the-icons diff-hl counsel-projectile counsel swiper ivy company-lsp lsp-mode centered-cursor-mode auto-yasnippet aggressive-indent ace-link anzu elixir-mode flycheck company window-purpose helm helm-core multiple-cursors magit-popup magit transient git-commit with-editor markdown-mode inf-ruby projectile haml-mode js2-mode powerline treemacs ht pfuture ace-window avy dash which-key use-package hydra org-plus-contrib evil yapfify yaml-mode ws-butler winum web-beautify vue-mode volatile-highlights uuidgen typescript-mode treemacs-evil toc-org tagedit symon string-inflection spinner spaceline smeargle slim-mode shrink-path shell-pop seeing-is-believing sass-mode rvm ruby-tools ruby-refactor ruby-hash-syntax restart-emacs rbenv ranger rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails prettier-js popwin pony-mode pippel pip-requirements persp-mode pcre2el password-generator overseer org-bullets open-junk-file ob-elixir nameless multi-term move-text minitest memoize markdown-toc magit-gitflow macrostep lv lorem-ipsum livid-mode json-navigator json-mode js2-refactor js-doc insert-shebang indent-guide importmagic impatient-mode imenu-list ibuffer-projectile hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag goto-chg google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-messenger git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-pos-tip flycheck-mix flycheck-credo flycheck-bashate flx-ido fish-mode fill-column-indicator feature-mode fancy-battery evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-numbers evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus emmet-mode elisp-slime-nav eldoc-eval dotenv-mode diminish define-word dart-mode darktooth-theme cython-mode company-web company-tern company-statistics company-shell company-quickhelp company-emoji company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby bundler browse-at-remote bind-key auto-highlight-symbol auto-compile async alchemist add-node-modules-path ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
