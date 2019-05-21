@@ -210,6 +210,7 @@ for_window [class="Virtualbox Manager"] floating enable border normal
 for_window [class="Virtualbox Machine"] floating disable
 for_window [class="Xfburn"] floating enable
 for_window [class="Steam"] floating enable border normal
+for_window [class="(?i)AnyDesk"] floating enable border normal
 
 for_window [instance="crx_.*"] floating disable
 
