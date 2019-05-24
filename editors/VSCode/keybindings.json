@@ -75,5 +75,15 @@
   {
     "key": "shift+alt+8",
     "command": "workbench.action.editorLayoutTwoByTwoGrid"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
   }
 ]
