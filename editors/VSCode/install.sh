@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-folder="$(dirname "$(readlink -f "$0")")"
+folder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 vscode_folder="$HOME/.config/Code/User"
 
 rm -r $vscode_folder/settings.json

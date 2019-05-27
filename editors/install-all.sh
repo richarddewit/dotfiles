@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-folder="$(dirname $(readlink -f $0))"
+folder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 bash $folder/Emacs/install.sh
 bash $folder/Vim/install.sh
