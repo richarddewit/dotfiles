@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-folder="$(dirname $(readlink -f $0))"
+folder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 [ -d $HOME/.vim ] || mkdir -p $HOME/.vim
 [ -d $HOME/.nvim ] || mkdir -p $HOME/.nvim

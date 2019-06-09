@@ -79,9 +79,9 @@ This function should only modify configuration layer settings."
 
      ;; 7 Frameworks
      django
-     phoenix
+     ;; phoenix
      react
-     ruby-on-rails
+     ;; ruby-on-rails
 
      ;; 8 Fun
      emoji
@@ -105,10 +105,10 @@ This function should only modify configuration layer settings."
      ;; csharp
      ;; csv
      ;; d
-     elixir
+     ;; elixir
      ;; elm
      emacs-lisp
-     erlang
+     ;; erlang
      ;; ess
      ;; extra-langs
      ;; faust
@@ -142,9 +142,9 @@ This function should only modify configuration layer settings."
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t)
      ;; racket
-     (ruby :variables
-           ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rbenv)
+     ;; (ruby :variables
+     ;;       ruby-enable-enh-ruby-mode t
+     ;;       ruby-version-manager 'rbenv)
      ;; rust
      ;; scala
      ;; scheme
@@ -747,8 +747,8 @@ before packages are loaded."
        (yas-load-directory dir)))
 
   ;; Hooks
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'ruby-mode-hook 'robe-mode)
+  ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
   (add-hook 'dart-mode-hook 'lsp)
 
   (defun richarddewit/django-web-mode-engine ()

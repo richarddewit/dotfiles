@@ -51,5 +51,39 @@
     "key": "ctrl+k ctrl+i",
     "command": "-editor.action.showHover",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+1",
+    "command": "workbench.action.editorLayoutSingle"
+  },
+  {
+    "key": "shift+alt+2",
+    "command": "workbench.action.editorLayoutTwoRows"
+  },
+  {
+    "key": "shift+alt+3",
+    "command": "workbench.action.editorLayoutThreeRows"
+  },
+  {
+    "key": "shift+alt+4",
+    "command": "workbench.action.editorLayoutTwoColumns"
+  },
+  {
+    "key": "shift+alt+5",
+    "command": "workbench.action.editorLayoutThreeColumns"
+  },
+  {
+    "key": "shift+alt+8",
+    "command": "workbench.action.editorLayoutTwoByTwoGrid"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
   }
 ]

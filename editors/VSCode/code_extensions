@@ -2,7 +2,6 @@ aaron-bond.better-comments
 AiryShift.spaces-inside-braces
 alefragnani.project-manager
 apedroed.Happy-Flasker
-belfz.search-crates-io
 brainfit.vscode-importmagic
 bungcip.better-toml
 chrislajoie.vscode-modelines
@@ -25,7 +24,6 @@ hollowtree.vue-snippets
 HookyQR.beautify
 infeng.vscode-react-typescript
 jeroen-meijer.pubspec-assist
-kalitaalexey.vscode-rust
 LaurentTreguier.vscode-simple-icons
 mgmcdermott.vscode-language-babel
 michelemelluso.gitignore
@@ -40,9 +38,7 @@ OfHumanBondage.react-proptypes-intellisense
 patbenatar.advanced-new-file
 PeterJausovec.vscode-docker
 richie5um2.vscode-sort-json
-rust-lang.rust
 samuelcolvin.jinjahtml
-serayuzgur.crates
 sleistner.vscode-fileutils
 tickleforce.scrolloff
 tomphilbin.gruvbox-themes
@@ -50,3 +46,4 @@ vscode-icons-team.vscode-icons
 vscodevim.vim
 wix.glean
 Zignd.html-css-class-completion
+zxh404.vscode-proto3

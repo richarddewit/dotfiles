@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 rm -r ~/.spacemacs
-folder="$(dirname $(readlink -f $0))"
+folder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo "Linking from $folder"
 ln -sf $folder/spacemacs ~/.spacemacs
 ln -sf $folder/spacemacs.desktop ~/.local/share/applications
