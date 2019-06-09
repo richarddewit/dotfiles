@@ -1,0 +1,43 @@
+diff -up california-0.4.0/src/application/california-application.vala.libical-3.0 california-0.4.0/src/application/california-application.vala
+--- california-0.4.0/src/application/california-application.vala.libical-3.0	2015-03-24 00:36:24.000000000 +0100
++++ california-0.4.0/src/application/california-application.vala	2017-11-08 18:50:45.118098403 +0100
+@@ -55,7 +55,7 @@ public class Application : Gtk.Applicati
+         }
+     }
+     
+-    private static const ActionEntry[] action_entries = {
++    private const ActionEntry[] action_entries = {
+         // public actions
+         { ACTION_CALENDAR_MANAGER, on_calendar_manager },
+         { ACTION_HELP, on_help },
+diff -up california-0.4.0/src/component/component.vala.libical-3.0 california-0.4.0/src/component/component.vala
+--- california-0.4.0/src/component/component.vala.libical-3.0	2015-03-24 00:36:24.000000000 +0100
++++ california-0.4.0/src/component/component.vala	2017-11-08 18:50:45.118098403 +0100
+@@ -224,7 +224,6 @@ private void date_to_ical(Calendar.Date
+     ical_dt->hour = 0;
+     ical_dt->minute = 0;
+     ical_dt->second = 0;
+-    ical_dt->is_utc = 0;
+     ical_dt->is_date = 1;
+     ical_dt->is_daylight = 0;
+     ical_dt->zone = null;
+@@ -240,7 +239,6 @@ private void exact_time_to_ical(Calendar
+     ical_dt->hour = exact_time.hour;
+     ical_dt->minute = exact_time.minute;
+     ical_dt->second = exact_time.second;
+-    ical_dt->is_utc = exact_time.tz.is_utc ? 1 : 0;
+     ical_dt->is_date = 0;
+     ical_dt->is_daylight = exact_time.is_dst ? 1 : 0;
+     ical_dt->zone = iCal.icaltimezone.get_builtin_timezone(exact_time.tz.zone.value);
+diff -up california-0.4.0/src/host/host-main-window.vala.libical-3.0 california-0.4.0/src/host/host-main-window.vala
+--- california-0.4.0/src/host/host-main-window.vala.libical-3.0	2017-11-08 18:51:38.508097665 +0100
++++ california-0.4.0/src/host/host-main-window.vala	2017-11-08 18:53:36.865096028 +0100
+@@ -71,7 +71,7 @@ public class MainWindow : Gtk.Applicatio
+     private const string ACTION_RESET_FONT = "reset-font";
+     private const string ACCEL_RESET_FONT = "KP_Multiply";
+     
+-    private static const ActionEntry[] action_entries = {
++    private const ActionEntry[] action_entries = {
+         { ACTION_QUICK_CREATE_EVENT, on_quick_create_event },
+         { ACTION_JUMP_TO_TODAY, on_jump_to_today },
+         { ACTION_NEXT, on_next },
