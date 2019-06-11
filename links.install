@@ -33,5 +33,3 @@ ln -sf $dir/zsh/zprofile $HOME/.zprofile
 ln -sf $dir/zsh/zshrc $HOME/.zshrc
 ln -sf $dir/zsh/zshenv $HOME/.zshenv
 
-## Custom keyboard layout
-sudo ln -sf $dir/xkb/symbols/colemak_DvbgHm /usr/share/X11/xkb/symbols/colemak_DvbgHm
