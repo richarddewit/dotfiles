@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+GREEN=$(tput setaf 2)
+NC=$(tput sgr0)
+LINE="%s\n"
+printf "${LINE}" "      _       _    __ _ _           "
+printf "${LINE}" "   __| | ___ | |_ / _(_) | ___  ___ "
+printf "${LINE}" "  / _\` |/ _ \\| __| |_| | |/ _ \\/ __|"
+printf "${LINE}" " | (_| | (_) | |_|  _| | |  __/\\__ \\"
+printf "${LINE}" "(_)__,_|\\___/ \\__|_| |_|_|\\___||___/"
+printf "${LINE}"
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+## ZSH
+curl -L git.io/antigen > $HOME/zsh/antigen.zsh
+
+## Neovim
+sudo pip2 install neovim
+sudo pip3 install neovim
+
+$dir/links.install

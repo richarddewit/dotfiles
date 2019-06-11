@@ -2,30 +2,11 @@
 
 # Links
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-if [[ ! ${XDG_CONFIG_HOME+x} ]]; then XDG_CONFIG_HOME="$HOME/.config"; fi
 mkdir -p $HOME/{tmp,zsh}
-mkdir -p $XDG_CONFIG_HOME/{i3,nvim,compton,gtk-3.0,termite,xfce4/terminal,ranger,Dharkael}
 
 ## General
-ln -sf $dir/Xresources $HOME/.Xresources
 ln -sf $dir/git/gitignore_global $HOME/.gitignore_global
 ln -sf $dir/git/gitconfig $HOME/.gitconfig
-ln -sf $dir/config/ranger_rc.conf $XDG_CONFIG_HOME/ranger/rc.conf
-ln -sf $dir/config/flameshot.ini $XDG_CONFIG_HOME/Dharkael/flameshot.ini
-
-## i3wm
-#ln -sf $dir/i3/dunstrc $XDG_CONFIG_HOME/dunst/dunstrc
-ln -sf $dir/i3/compton.conf $XDG_CONFIG_HOME/compton/compton.conf
-ln -sf $dir/i3/config $XDG_CONFIG_HOME/i3/config
-
-## Terminal
-# ln -sf $dir/config/termite-config $XDG_CONFIG_HOME/termite/config
-ln -sf $dir/config/xfce4-terminalrc $XDG_CONFIG_HOME/xfce4/terminal/terminalrc
-
-## Theming
-ln -sf $dir/gtk/gtk3.css $XDG_CONFIG_HOME/gtk-3.0/gtk.css
-ln -sf $dir/gtk/gtk3-settings.ini $XDG_CONFIG_HOME/gtk-3.0/settings.ini
-ln -sf $dir/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 
 ## Shell/ZSH
 ln -sf $dir/profile $HOME/.profile
