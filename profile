@@ -37,16 +37,29 @@ fi
 
 # alias ssh='TERM=xterm ssh'
 
+# Detect platform
+case "$(uname -s)" in
+  Linux)
+    platform="linux";;
+  Darwin)
+    platform="macos";;
+  CYGWIN*|MINGW*|MSYS*)
+    platform="windows";;
+  *)
+    platform="other";;
+esac
+export PLATFORM="$platform"
+
 export DOTFILES=$HOME/dotfiles
+[ "$platform" = "linux" ] && [ -d "$HOME/dotmanjaro" ] && export DOTMANJARO=$HOME/dotmanjaro
+[ "$platform" = "macos" ] && [ -d "$HOME/dotmacos" ]   && export DOTMACOS=$HOME/dotmacos
 
 # $PATH
 export PATH="./bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 # Dotfiles bin
 export PATH="$DOTFILES/bin:$PATH"
-# Composer
-export PATH="$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH"
-# Node/NPM/Yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -n "$DOTMANJARO" ] && [ -d "$DOTMANJARO/bin" ] && export PATH="$DOTMANJARO/bin:$PATH"
+[ -n "$DOTMACOS" ]   && [ -d "$DOTMACOS/bin" ]   && export PATH="$DOTMACOS/bin:$PATH"
 # Dart
 export PATH="$HOME/.pub-cache/bin:$PATH"
 
