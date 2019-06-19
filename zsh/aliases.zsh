@@ -62,3 +62,4 @@ function emc() {
 
 # Docker
 source $DOTFILES/zsh/docker-aliases.zsh
+alias mine="sudo chown -R $(id -nu):$(id -ng)"
