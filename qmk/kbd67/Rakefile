@@ -1,0 +1,50 @@
+require 'fileutils'
+
+KEYMAP     = 'custom'
+KEYBOARD   = 'kbdfans/kbd67/rev2'
+QMK_DIR    = "#{ENV['HOME']}/dev/c/qmk_firmware"
+KEYMAP_DIR = "#{QMK_DIR}/keyboards/#{KEYBOARD}/keymaps/#{KEYMAP}/"
+
+task default: :install
+
+directory KEYMAP_DIR
+
+desc 'Symlink keymap files into QMK source tree'
+task install: KEYMAP_DIR do
+  FileUtils.ln_sf([
+    File.expand_path('keymap.c', __dir__),
+  ], KEYMAP_DIR, verbose: true)
+end
+
+desc 'Remove symlinks from QMK source tree'
+task :uninstall do
+  FileUtils.rm_r KEYMAP_DIR, verbose: true, force: true
+end
+
+desc 'Make keymap and flash board'
+task :hex do
+  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}" }
+end
+
+desc 'Make keymap and flash board'
+task :makeflash do
+  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}:dfu-util-wait" }
+end
+
+#desc 'Make keymap and flash board'
+#task :flash do
+  #Dir.chdir(QMK_DIR) { sh "avrdude -p atmega32u4 -c avr109 -U flash:w:'vitamins_included_rev1_default.hex':i -P COM3" }
+#end
+
+desc 'Remove build artifacts'
+task :clean do
+  Dir.chdir(QMK_DIR) { sh 'make clean' }
+end
+
+desc 'Update QMK firmware'
+task :pull do
+  Dir.chdir(QMK_DIR) {
+    sh 'git pull --ff-only'
+    sh 'make git-submodule'
+  }
+end
