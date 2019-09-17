@@ -14,3 +14,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
 [ ! -d "$PROJECT_HOME" ] && mkdir -p $PROJECT_HOME
 [ -s "$VIRTUALENVWRAPPER_SCRIPT" ] && source $VIRTUALENVWRAPPER_SCRIPT
+
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+  source /usr/share/nvm/init-nvm.sh
+  export NVM_SYMLINK_CURRENT=true
+  export PATH="$HOME/.nvm/current/bin:$PATH"
+fi
