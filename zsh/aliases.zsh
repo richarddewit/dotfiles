@@ -13,6 +13,7 @@ function mkcd {
 }
 alias mkcd=mkcd
 alias open=xdg-open
+[ -f "$HOME/go/bin/g" ] && unalias g
 
 # NPM
 alias npmg='npm i -g'
