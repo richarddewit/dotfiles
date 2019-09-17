@@ -1,7 +1,11 @@
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
-[ -s "$(which pyenv)" ] && eval "$(pyenv init -)"
+if [ -s "$(which pyenv)" ]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 export PROJECT_HOME=$HOME/dev/python
 export WORKON_HOME=$PROJECT_HOME/.virtualenvs
