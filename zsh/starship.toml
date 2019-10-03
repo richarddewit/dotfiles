@@ -1,0 +1,13 @@
+[character]
+symbol = "$"
+vicmd_symbol = "❯"
+
+[cmd_duration]
+min_time = 4
+
+[directory]
+truncation_length = 6
+
+[package]
+disabled = true
+
