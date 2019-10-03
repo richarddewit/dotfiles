@@ -1,21 +1,9 @@
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load (actually as a fallback)
+ZSH_THEME="agnoster"
+
 source $HOME/zsh/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (oh-my-zsh).
-antigen bundle git
-antigen bundle npm
-[ -f "$(which pacman)" ] && antigen bundle archlinux
-[ "$PLATFORM" = "macos" ] && antigen bundle osx
-antigen bundle rails
-antigen bundle rbenv
-antigen bundle ruby
-antigen bundle django
-
-# Other bundles not in oh-my-zsh
-# NOTE: zsh-syntax-highlighting must be the LAST bundle!
-antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -38,10 +26,17 @@ HIST_STAMPS="dd-mm-yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #   NOTE: zsh-syntax-highlighting must be LAST!
-#plugins=(git npm archlinux gulp laravel5 composer zsh-syntax-highlighting)
+plugins=(git npm emacs)
+[ "$PLATFORM" = "macos" ] && plugins+=(osx)
+[ -f "$(which pacman)" ] && plugins+=(archlinux)
+[ -f "$(which ruby)" ] && plugins+=(ruby rbenv rails)
+[ -f "$(which go)" ] && plugins+=(go)
 
-# Apply antigen configs
-antigen apply
+# Load the oh-my-zsh's library.
+source $ZSH/oh-my-zsh.sh
+
+# NOTE: zsh-syntax-highlighting must be the LAST bundle!
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $DOTFILES/zsh/aliases.zsh
 
