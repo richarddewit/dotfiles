@@ -13,5 +13,5 @@ ln -sf $dir/profile $HOME/.profile
 ln -sf $dir/zsh/zprofile $HOME/.zprofile
 ln -sf $dir/zsh/zshrc $HOME/.zshrc
 ln -sf $dir/zsh/zshenv $HOME/.zshenv
-ln -sf $dir/zsh/spaceship.toml $HOME/.config/spaceship.toml
+ln -sf $dir/zsh/starship.toml $HOME/.config/starship.toml
 
