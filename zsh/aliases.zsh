@@ -15,10 +15,11 @@ alias mkcd=mkcd
 alias open=xdg-open
 [ -f "$HOME/go/bin/g" ] && unalias g
 
-# NPM
+# Node
 alias npmg='npm i -g'
 alias npms='npm i -S'
 alias npmd='npm i -D'
+alias nvmrc='nvm current > .nvmrc'
 
 # Vagrant
 alias vsus='vagrant suspend'
@@ -63,6 +64,7 @@ function emc() {
 
 # Docker
 source $DOTFILES/zsh/docker-aliases.zsh
+
 function mine() {
   if [ -z "$@" ]; then
     args='.'
