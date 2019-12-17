@@ -13,7 +13,7 @@
 
 // Aliases
 #define ___V___ KC_TRNS
-#define _______ KC_NO
+//#define _______ KC_NO
 
 // Compound keys
 #define FN_GRV  LT(_FN, KC_GRV) // Grave-Fn
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FN] = LAYOUT_tsangan(
       MO(_LAYER), KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,     KC_F6,     KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,    KC_F12,    _______,   ___V___,
-      ___V___,    _______,   KC_UP,     _______,   _______,   _______,   KC_INS,    KC_HOME,   KC_UP,     KC_END,    KC_BSLS,   KC_PGUP,   _______,   ___V___,
+      ___V___,    _______,   KC_UP,     _______,   _______,   _______,   KC_INS,    KC_HOME,   KC_UP,     KC_END,    KC_BSPC,   KC_PGUP,   _______,   ___V___,
       CTL_ESC,    KC_LEFT,   KC_DOWN,   KC_RIGHT,  _______,   _______,   KC_DEL,    KC_LEFT,   KC_DOWN,   KC_RIGHT,  KC_ENT,    KC_PGDN,              ___V___ ,
       ___V___,    KC_F13,    KC_F14,    KC_F15,    KC_F16,    _______,   KC_PSLS,   KC_PAST,   KC_PMNS,   KC_PPLS,   KC_PEQL,   ___V___,              ___V___ ,
       ___V___,    ___V___,   ___V___,                                    KC_SPC,                                                ___V___,   ___V___,   ___V___),
@@ -77,8 +77,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
-  keyevent_t event = record->event;
-
   switch (id) {
     case M_FLASK:
       if (record->event.pressed) {
