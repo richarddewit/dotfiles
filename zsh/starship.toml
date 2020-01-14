@@ -3,7 +3,7 @@ symbol = "$"
 vicmd_symbol = "❯"
 
 [cmd_duration]
-min_time = 4
+min_time = 3000
 
 [directory]
 truncation_length = 6
