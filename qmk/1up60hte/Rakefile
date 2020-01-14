@@ -2,7 +2,7 @@ require 'fileutils'
 
 KEYMAP     = 'custom'
 KEYBOARD   = '1upkeyboards/1up60hte'
-QMK_DIR    = "#{ENV['HOME']}/dev/c/qmk_firmware"
+QMK_DIR    = "#{ENV['HOME']}/qmk_firmware"
 KEYMAP_DIR = "#{QMK_DIR}/keyboards/#{KEYBOARD}/keymaps/#{KEYMAP}/"
 
 task default: :install
@@ -13,6 +13,7 @@ desc 'Symlink keymap files into QMK source tree'
 task install: KEYMAP_DIR do
   FileUtils.ln_sf([
     File.expand_path('keymap.c', __dir__),
+    File.expand_path('rules.mk', __dir__),
   ], KEYMAP_DIR, verbose: true)
 end
 
@@ -28,7 +29,7 @@ end
 
 desc 'Make keymap and flash board'
 task :makeflash do
-  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}:dfu" }
+  Dir.chdir(QMK_DIR) { sh "make #{KEYBOARD}:#{KEYMAP}:flash" }
 end
 
 desc 'Remove build artifacts'
