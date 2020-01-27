@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+case "$PLAYER_EVENT" in
+  start|change) ;;
+  *) exit 0;;
+esac
+
 caption="♬ Spotify"
 metadata=""
 tries=0
