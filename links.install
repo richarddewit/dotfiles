@@ -15,3 +15,6 @@ ln -sf $dir/zsh/zshrc $HOME/.zshrc
 ln -sf $dir/zsh/zshenv $HOME/.zshenv
 ln -sf $dir/zsh/starship.toml $HOME/.config/starship.toml
 
+## Config
+ln -sf $dir/config/tmux.conf $HOME/.tmux.conf
+
