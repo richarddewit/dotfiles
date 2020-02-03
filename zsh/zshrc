@@ -30,7 +30,7 @@ plugins=(git npm emacs)
 [ "$PLATFORM" = "macos" ] && plugins+=(osx)
 [ -f "$(which pacman)" ] && plugins+=(archlinux)
 [ -f "$(which ruby)" ] && plugins+=(ruby rbenv rails)
-[ -f "$(which go)" ] && plugins+=(go)
+[ -f "$(which poetry)" ] && plugins+=(poetry)
 
 # Load the oh-my-zsh's library.
 source $ZSH/oh-my-zsh.sh
