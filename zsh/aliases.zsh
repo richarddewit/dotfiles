@@ -13,6 +13,10 @@ mkcd() {
 }
 alias open=xdg-open
 [ -f "$HOME/go/bin/g" ] && unalias g
+unalias gg
+gg() {
+  xdg-open "https://google.com/search?q=$*"
+}
 
 # Node
 alias npmg="npm i -g"
