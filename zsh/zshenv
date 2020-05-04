@@ -22,8 +22,5 @@ if [ -f /usr/share/nvm/init-nvm.sh ]; then
 fi
 
 export ASDF_DIR="/opt/asdf-vm"
-if [ -d "$ASDF_DIR" ]; then
-  source "${ASDF_DIR}/asdf.sh"
-  source "${ASDF_DIR}/completions/asdf.bash"
-fi
+[ -d "$ASDF_DIR" ] && source "${ASDF_DIR}/asdf.sh"
 
