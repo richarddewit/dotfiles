@@ -1,5 +1,6 @@
 [character]
-symbol = "$"
+success_symbol = "[\\$](green)"
+error_symbol = "[✖](red)"
 vicmd_symbol = "❯"
 
 [cmd_duration]
