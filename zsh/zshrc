@@ -45,3 +45,5 @@ eval "$(starship init zsh)"
 setopt autocd
 autoload -Uz compinit
 compinit
+
+[ -f "/etc/bash_completion.d/sly-completion.bash" ] && source /etc/bash_completion.d/sly-completion.bash
