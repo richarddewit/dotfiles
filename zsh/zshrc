@@ -29,8 +29,10 @@ HIST_STAMPS="dd-mm-yyyy"
 plugins=(git npm emacs)
 [ "$PLATFORM" = "macos" ] && plugins+=(osx)
 [ -f "$(which pacman)" ] && plugins+=(archlinux)
-[ -f "$(which ruby)" ] && plugins+=(ruby rbenv rails)
+# [ -f "$(which ruby)" ] && plugins+=(ruby rbenv rails)
+# [ -f "$(which ruby)" ] && plugins+=(ruby rails)
 [ -f "$(which poetry)" ] && plugins+=(poetry)
+[ -f "$(which go)" ] && plugins+=(golang)
 
 # Load the oh-my-zsh's library.
 source $ZSH/oh-my-zsh.sh

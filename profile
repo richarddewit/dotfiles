@@ -63,4 +63,6 @@ export PATH="$DOTFILES/bin:$PATH"
 # Dart
 export PATH="$HOME/.pub-cache/bin:$PATH"
 
+export DOCKER_HOST=unix:///run/docker.sock
+
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile

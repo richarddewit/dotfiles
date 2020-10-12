@@ -51,6 +51,14 @@ alias py="python"
 alias m="python manage.py"
 alias pi="pipenv install"
 
+# Ruby/Rails
+alias rb="ruby"
+alias b="bundle"
+alias bi="bundle install"
+alias ba="bundle add"
+alias bu="bundle update"
+alias be="bundle exec"
+
 # Emacs
 emc() {
   dir="${1:-.}"

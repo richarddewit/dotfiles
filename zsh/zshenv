@@ -1,5 +1,6 @@
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
 [ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+export RUBYOPT='-W:no-deprecated -W:no-experimental'
 
 if [ -s "$(which pyenv)" ]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
@@ -9,9 +10,9 @@ fi
 
 export PROJECT_HOME=$HOME/dev/python
 export WORKON_HOME=$PROJECT_HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
+export VIRTUALENVWRAPPER_VIRTUALENV=$(which virtualenv)
+export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
 [ ! -d "$PROJECT_HOME" ] && mkdir -p $PROJECT_HOME
 [ -s "$VIRTUALENVWRAPPER_SCRIPT" ] && source $VIRTUALENVWRAPPER_SCRIPT
 
@@ -24,3 +25,11 @@ fi
 export ASDF_DIR="/opt/asdf-vm"
 [ -d "$ASDF_DIR" ] && source "${ASDF_DIR}/asdf.sh"
 
+[ -d "$HOME/.cargo/bin" ] && export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -s "$(which go)" ]; then
+  export GOPATH="$(go env GOPATH)"
+  export PATH="$GOPATH/bin:$PATH"
+fi
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
