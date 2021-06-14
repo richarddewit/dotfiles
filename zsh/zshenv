@@ -8,6 +8,8 @@ if [ -s "$(which pyenv)" ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONUNBUFFERED=1
 export PROJECT_HOME=$HOME/dev/python
 export WORKON_HOME=$PROJECT_HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$(which python)
@@ -32,4 +34,7 @@ if [ -s "$(which go)" ]; then
   export PATH="$GOPATH/bin:$PATH"
 fi
 
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
+if [ -s "$(which dotnet)" ]; then
+  DOTNET_CLI_TELEMETRY_OPTOUT=1
+  export PATH="/$HOME/.dotnet/tools:$PATH"
+fi
