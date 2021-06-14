@@ -80,3 +80,6 @@ mine() {
   fi
   sudo chown -R $(id -nu):$(id -ng) "$args"
 }
+
+# .NET
+alias Install-Package="dotnet add package"
