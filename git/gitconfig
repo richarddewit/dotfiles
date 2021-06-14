@@ -7,3 +7,5 @@
 	default = simple
 [merge]
 	log = 100
+[init]
+	defaultBranch = main
