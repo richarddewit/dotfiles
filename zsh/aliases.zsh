@@ -18,6 +18,9 @@ gg() {
   xdg-open "https://google.com/search?q=$*"
 }
 
+# Git (extra)
+alias glr="git pull --rebase --autostash"
+
 # Node
 alias npmg="npm i -g"
 alias npms="npm i -S"
