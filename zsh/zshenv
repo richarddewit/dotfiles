@@ -4,8 +4,16 @@ export ASDF_DIR="/opt/asdf-vm"
 
 # Ruby
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
-[ -s "$(which ruby)" ] && export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
-export RUBYOPT='-W:no-deprecated -W:no-experimental'
+if [ -s "$(which ruby)" ]; then
+  export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+
+  _ruby() {
+    no_warnings="-W:no-deprecated -W:no-experimental"
+    ruby $no_warnings -v &> /dev/null && export RUBYOPT=$no_warnings || export RUBYOPT=
+    ruby $@
+  }
+  alias ruby="_ruby"
+fi
 
 # Python
 export PYTHONDONTWRITEBYTECODE=1
@@ -37,5 +45,10 @@ fi
 # .NET Core
 if [ -s "$(which dotnet)" ]; then
   DOTNET_CLI_TELEMETRY_OPTOUT=1
-  export PATH="/$HOME/.dotnet/tools:$PATH"
+  export PATH="$HOME/.dotnet/tools:$PATH"
+fi
+
+# PHP
+if [ -s "$(which php)" ]; then
+  export PATH="$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH"
 fi
