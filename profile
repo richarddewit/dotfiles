@@ -64,5 +64,6 @@ export PATH="$DOTFILES/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
 
 export DOCKER_HOST=unix:///run/docker.sock
+export DOCKER_BUILDKIT=1
 
 [[ -f ~/.extend.profile ]] && . ~/.extend.profile
