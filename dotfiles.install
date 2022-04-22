@@ -13,7 +13,10 @@ printf "${LINE}"
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ## ZSH
+mkdir -p $HOME/zsh
 curl -L git.io/antigen > $HOME/zsh/antigen.zsh
+echo "Press C-d to continue this script after you see the ZSH prompt"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ## Neovim
 sudo pip2 install neovim
