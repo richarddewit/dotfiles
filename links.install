@@ -3,7 +3,6 @@
 # Links
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p $HOME/{tmp,zsh}
-mkdir -p $HOME/.config/spotifyd
 
 ## General
 ln -sf $dir/git/gitignore_global $HOME/.gitignore_global
@@ -18,5 +17,4 @@ ln -sf $dir/zsh/starship.toml $HOME/.config/starship.toml
 
 ## Config
 ln -sf $dir/config/tmux.conf $HOME/.tmux.conf
-ln -sf $dir/config/spotifyd.conf $HOME/.config/spotifyd/spotifyd.conf
 
