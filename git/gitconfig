@@ -5,6 +5,7 @@
 	path = ~/.gitconfig.local
 [push]
 	default = simple
+	autoSetupRemote = true
 [merge]
 	log = 100
 [init]
