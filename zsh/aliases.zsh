@@ -6,12 +6,14 @@ run_bg() {
 alias "$"=""
 alias sr="exec $SHELL"
 
-alias vim=nvim
+[ -f "$(which nvim)" ] && alias vim=nvim
 
 mkcd() {
   command mkdir -p "$1" && cd "$1"
 }
-alias open=xdg-open
+if [ "$PLATFORM" != "macos" ]; then
+  alias open=xdg-open
+fi
 [ -f "$HOME/go/bin/g" ] && unalias g
 unalias gg
 gg() {
@@ -43,11 +45,21 @@ function gmacs {
 }
 
 # Listing with directory first
-alias l="ls -lah --group-directories-first"
-alias la="ls -lAh --group-directories-first"
-alias ll="ls -alh --color=auto --group-directories-first"
-alias ls="ls -lh --color=auto --group-directories-first"
-alias lsa="ls -lah --group-directories-first"
+if [ "$PLATFORM" = "macos" ]; then
+  alias lsa="gls -lah"
+  alias l="gls -lah --group-directories-first"
+  alias la="gls -lAh --group-directories-first"
+  alias ll="gls -alh --color=auto --group-directories-first"
+  alias ls="gls -lh --color=auto --group-directories-first"
+  alias lsa="gls -lah --group-directories-first"
+else
+  alias lsa="ls -lah"
+  alias l="ls -lah --group-directories-first"
+  alias la="ls -lAh --group-directories-first"
+  alias ll="ls -alh --color=auto --group-directories-first"
+  alias ls="ls -lh --color=auto --group-directories-first"
+  alias lsa="ls -lah --group-directories-first"
+fi
 
 # Python/Django
 alias py="python"
