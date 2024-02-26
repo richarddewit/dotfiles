@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Function to convert time to minutes
+time_to_minutes() {
+    local time=$1
+    local hours=$(echo "$time" | cut -d ':' -f 1)
+    local minutes=$(echo "$time" | cut -d ':' -f 2)
+    echo $((10#$hours * 60 + 10#$minutes))
+}
+
+# Function to convert minutes to time format
+minutes_to_time() {
+    local total_minutes=$1
+    local hours=$((total_minutes / 60))
+    local minutes=$((total_minutes % 60))
+    printf "%dh %dm\n" "$hours" "$minutes"
+}
+
+# Main script
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <time1> <time2: default=now>"
+    exit 1
+fi
+
+time1_minutes=$(time_to_minutes "$1")
+time2_minutes=$(time_to_minutes "${2:-$(date +"%R")}")
+
+if [ $time1_minutes -gt $time2_minutes ]; then
+    time_diff=$((time1_minutes - time2_minutes))
+else
+    time_diff=$((time2_minutes - time1_minutes))
+fi
+
+minutes_to_time "$time_diff"
