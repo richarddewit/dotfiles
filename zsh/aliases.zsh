@@ -22,6 +22,7 @@ gg() {
 
 # Git (extra)
 alias glr="git pull --rebase --autostash"
+alias gla="git pull --autostash"
 
 # Node
 alias npmg="npm i -g"
