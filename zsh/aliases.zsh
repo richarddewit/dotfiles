@@ -74,6 +74,40 @@ alias ba="bundle add"
 alias bu="bundle update"
 alias be="bundle exec"
 
+# DDEV/PHP
+ddev_php() {
+  if [ "$(pwd)" != "$HOME" ] && [ -d ".ddev" ]; then
+    echo "DDEV found. Executing inside DDEV instead." >&2
+    if [[ "$1" == "artisan" ]]; then
+      ddev $@
+    else
+      ddev php $@
+    fi
+  else
+    \php $@
+  fi
+}
+ddev_composer() {
+  if [ "$(pwd)" != "$HOME" ] && [ -d ".ddev" ]; then
+    echo "DDEV found. Executing inside DDEV instead." >&2
+    ddev composer $@
+  else
+    \composer $@
+  fi
+}
+ddev_npm() {
+  if [ "$(pwd)" != "$HOME" ] && [ -d ".ddev" ]; then
+    echo "DDEV found. Executing inside DDEV instead." >&2
+    ddev npm $@
+  else
+    \npm $@
+  fi
+}
+alias php=ddev_php
+alias composer=ddev_composer
+alias npm=ddev_npm
+alias tinker="php artisan tinker"
+
 # Emacs
 emc() {
   dir="${1:-.}"
