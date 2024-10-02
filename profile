@@ -14,7 +14,7 @@
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-if [ -f /usr/bin/nvim ]; then
+if [ -s "$(which nvim)" ]; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
