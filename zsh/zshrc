@@ -27,7 +27,7 @@ HIST_STAMPS="dd-mm-yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 #   NOTE: zsh-syntax-highlighting must be LAST!
 plugins=(git npm emacs)
-[ "$PLATFORM" = "macos" ] && plugins+=(osx)
+[ "$PLATFORM" = "macos" ] && plugins+=(macos brew)
 [ -f "$(which pacman)" ] && plugins+=(archlinux)
 # [ -f "$(which ruby)" ] && plugins+=(ruby rbenv rails)
 # [ -f "$(which ruby)" ] && plugins+=(ruby rails)
@@ -38,7 +38,11 @@ plugins=(git npm emacs)
 source $ZSH/oh-my-zsh.sh
 
 # NOTE: zsh-syntax-highlighting must be the LAST bundle!
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ "$PLATFORM" = "macos" ]; then
+	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 source $DOTFILES/zsh/aliases.zsh
 
