@@ -36,9 +36,6 @@ alias vssh="vagrant ssh"
 alias vup="vagrant up"
 
 # Editors/IDEs
-if [ "$PLATFORM" = "macos" ]; then
-  alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-fi
 function gmacs {
   if [ -z "$@" ]; then
     args="."
