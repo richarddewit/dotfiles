@@ -1,6 +1,12 @@
 # Generic
 export ASDF_DIR="/opt/asdf-vm"
+if [ "$PLATFORM" = "macos" ]; then
+  export ASDF_DIR="/opt/homebrew/opt/asdf/libexec"
+fi
 [ -d "$ASDF_DIR" ] && source "${ASDF_DIR}/asdf.sh"
+if [ -d "$HOME/Library/Application Support/JetBrains/Toolbox/scripts" ]; then
+  export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+fi
 
 # Ruby
 [ -s "$(which rbenv)" ] && eval "$(rbenv init -)"
