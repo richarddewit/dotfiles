@@ -12,6 +12,9 @@ brew install git coreutils the_silver_searcher nvim zsh-syntax-highlighting star
 # Middleclick
 brew install --cask --no-quarantine middleclick
 
+# VSCodium
+brew install --cask vscodium
+
 # Docker
 brew install orbstack
 brew install --cask docker
