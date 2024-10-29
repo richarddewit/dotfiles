@@ -25,10 +25,17 @@ alias glr="git pull --rebase --autostash"
 alias gla="git pull --autostash"
 
 # Node
+if [ -f "$(which corepack)" ]; then
+  alias yarn="corepack yarn"
+  alias yarnpkg="corepack yarnpkg"
+  alias pnpm="corepack pnpm"
+  alias pnpx="corepack pnpx"
+  alias npm="corepack npm"
+  alias npx="corepack npx"
+fi
 alias npmg="npm i -g"
 alias npms="npm i -S"
 alias npmd="npm i -D"
-alias nvmrc="nvm current > .nvmrc"
 
 # Vagrant
 alias vsus="vagrant suspend"
