@@ -2,22 +2,28 @@
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Homebrew
 if [ ! -f "$(which brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# General
+## General
 brew install git coreutils the_silver_searcher nvim zsh-syntax-highlighting starship iterm2
-
-# Middleclick
+## Middleclick
 brew install --cask --no-quarantine middleclick
-
-# VSCodium
+## VSCodium
 brew install --cask vscodium
-
-# Docker
+## Docker
 brew install orbstack
 brew install --cask docker
+## asdf
+brew install asdf autoconf openssl@1.1 wxwidgets libxslt fop
+## Python
+brew install uv virtualenv virtualenvwrapper
 
 # asdf
-brew install asdf autoconf openssl@1.1 wxwidgets libxslt fop
+asdf plugin add elixir
+asdf plugin add erlang
+asdf plugin add golang
+asdf plugin add nodejs
+asdf plugin add python
