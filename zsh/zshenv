@@ -1,6 +1,6 @@
 # Generic
 export ASDF_DIR="/opt/asdf-vm"
-if [ "$PLATFORM" = "macos" ]; then
+if [ -d "/opt/homebrew" ]; then
   export ASDF_DIR="/opt/homebrew/opt/asdf/libexec"
 fi
 [ -d "$ASDF_DIR" ] && source "${ASDF_DIR}/asdf.sh"
