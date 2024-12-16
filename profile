@@ -2,7 +2,9 @@
 #
 # ~/.profile
 #
-#
+
+# Allow globally reloading by calling `pkill -SIGUSR1 zsh`
+trap ". ${HOME}/.profile" SIGUSR1
 
 # Disable Ctrl-S (suspend) and Ctrl-Q (resume) in terminals
 \stty -ixon
@@ -13,8 +15,7 @@
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-if [ -s "$(which nvim)" ]; then
+if [ -f "$(which nvim)" ]; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
