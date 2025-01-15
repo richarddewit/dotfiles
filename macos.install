@@ -20,6 +20,8 @@ brew install --cask docker
 brew install asdf autoconf openssl@1.1 wxwidgets libxslt fop
 ## Python
 brew install uv virtualenv virtualenvwrapper
+## PHP
+brew install automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip pkg-config re2c zlib openssl@3 oniguruma
 
 # asdf
 asdf plugin add elixir
@@ -27,3 +29,4 @@ asdf plugin add erlang
 asdf plugin add golang
 asdf plugin add nodejs
 asdf plugin add python
+asdf plugin add php
