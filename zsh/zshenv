@@ -58,3 +58,8 @@ fi
 if [ -s "$(which php)" ]; then
   export PATH="$HOME/.config/composer/vendor/bin:./vendor/bin:$PATH"
 fi
+
+# Java
+if [ -s "$(which java)" ]; then
+  source "$HOME/.asdf/plugins/java/set-java-home.zsh"
+fi
