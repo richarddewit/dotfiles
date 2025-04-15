@@ -8,7 +8,7 @@ if [ ! -f "$(which brew)" ]; then
 fi
 
 ## General
-brew install git coreutils the_silver_searcher nvim zsh-syntax-highlighting starship iterm2
+brew install git coreutils the_silver_searcher nvim zsh-syntax-highlighting starship iterm2 watchexec
 ## Middleclick
 brew install --cask --no-quarantine middleclick
 ## VSCodium
@@ -24,6 +24,7 @@ brew install uv virtualenv virtualenvwrapper
 brew install automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip pkg-config re2c zlib openssl@3 oniguruma
 
 # asdf
+asdf plugin add crystal
 asdf plugin add elixir
 asdf plugin add erlang
 asdf plugin add golang

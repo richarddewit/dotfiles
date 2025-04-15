@@ -140,3 +140,9 @@ mine() {
 
 # .NET
 alias Install-Package="dotnet add package"
+
+# Crystal
+if [ -f "$(which watchexec)" ]; then
+  alias wcr="watchexec -w 'src' -w 'shard.yml' -rc -- shards run"
+  alias wcrt="KEMAL_ENV=test watchexec -w spec -f '**/*.cr' -c -- crystal spec"
+fi
